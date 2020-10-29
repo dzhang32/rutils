@@ -53,8 +53,8 @@ available::available("rutils")
 ## to check that your package name is not taken and that it doesn't have
 ## a meaning that you might not be aware of.
 
-usethis::create_package("")
-## This opens a new window in RStudio
+usethis::create_package(".")
+N## This opens a new window in RStudio
 
 ## Note: If you create packages frequently, check the help file for
 ## usethis::use_description() for more information on how to set some R author

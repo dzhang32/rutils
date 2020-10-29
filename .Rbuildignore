@@ -1,3 +1,5 @@
 ^dev$
 ^rutils\.Rproj$
 ^\.Rproj\.user$
+^codecov\.yml$
+^\.github$
