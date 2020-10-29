@@ -15,22 +15,13 @@ coverage](https://codecov.io/gh/dzhang32/rutils/branch/master/graph/badge.svg)](
 
 ## Installation instructions
 
-There’s not plan to ever submit this package to `CRAN` or
-`Bioconductor`. It exists purely for personal use, if you’d like to
-install the development version from [GitHub](https://github.com/) you
-can use the following command:
+There’s no plan to ever submit this package to `CRAN` or `Bioconductor`.
+It exists purely for personal use, if you’d like to install the
+development version from [GitHub](https://github.com/) you can use the
+following command:
 
 ``` r
 BiocManager::install("dzhang32/rutils")
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library("rutils")
-## basic example code
 ```
 
 ## Citation

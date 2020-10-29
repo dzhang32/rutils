@@ -23,19 +23,10 @@ knitr::opts_chunk$set(
 
 ## Installation instructions
 
-There's not plan to ever submit this package to `CRAN` or `Bioconductor`. It exists purely for personal use, if you'd like to install the development version from [GitHub](https://github.com/) you can use the following command:
+There's no plan to ever submit this package to `CRAN` or `Bioconductor`. It exists purely for personal use, if you'd like to install the development version from [GitHub](https://github.com/) you can use the following command:
 
 ```{r 'install_dev', eval = FALSE}
 BiocManager::install("dzhang32/rutils")
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-```{r example, eval = requireNamespace('rutils')}
-library("rutils")
-## basic example code
 ```
 
 ## Citation
