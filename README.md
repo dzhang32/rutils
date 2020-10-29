@@ -15,7 +15,7 @@ coverage](https://codecov.io/gh/dzhang32/rutils/branch/master/graph/badge.svg)](
 
 ## Installation instructions
 
-There’s no plan to ever submit this package to `CRAN` or
+There’s not plan to ever submit this package to `CRAN` or
 `Bioconductor`. It exists purely for personal use, if you’d like to
 install the development version from [GitHub](https://github.com/) you
 can use the following command:
@@ -40,18 +40,19 @@ Please run this yourself to check for any updates on how to cite
 **rutils**.
 
 ``` r
-print(citation('rutils'), bibtex = TRUE)
+print(citation("rutils"), bibtex = TRUE)
 #> 
 #> To cite package 'rutils' in publications use:
 #> 
-#>   First Last (2020). rutils: What the Package Does (One Line, Title
-#>   Case). R package version 0.99.0. https://github.com/dzhang32/rutils
+#>   David Zhang (2020). rutils: `rutils` is a home for commonly used
+#>   utility functions. R package version 0.99.0.
+#>   https://github.com/dzhang32/rutils
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Manual{,
-#>     title = {rutils: What the Package Does (One Line, Title Case)},
-#>     author = {First Last},
+#>     title = {rutils: `rutils` is a home for commonly used utility functions},
+#>     author = {David Zhang},
 #>     year = {2020},
 #>     note = {R package version 0.99.0},
 #>     url = {https://github.com/dzhang32/rutils},

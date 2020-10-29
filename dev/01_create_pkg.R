@@ -54,7 +54,7 @@ available::available("rutils")
 ## a meaning that you might not be aware of.
 
 usethis::create_package(".")
-N## This opens a new window in RStudio
+## This opens a new window in RStudio
 
 ## Note: If you create packages frequently, check the help file for
 ## usethis::use_description() for more information on how to set some R author
