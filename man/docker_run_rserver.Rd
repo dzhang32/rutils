@@ -38,6 +38,7 @@ host.
 \examples{
 
 \dontrun{
+docker_run_rserver()
 docker_run_rserver(volumes = "/home/dzhang/projects/dasper_analysis/raw_data;/home/dzhang/projects/dasper_analysis/scripts")
 }
 }

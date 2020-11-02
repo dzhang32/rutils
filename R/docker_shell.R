@@ -24,6 +24,7 @@
 #' @examples
 #'
 #' \dontrun{
+#' docker_run_rserver()
 #' docker_run_rserver(volumes = "/home/dzhang/projects/dasper_analysis/raw_data;/home/dzhang/projects/dasper_analysis/scripts")
 #' }
 docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:devel",
@@ -43,15 +44,17 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:devel",
         cmdfun::cmd_list_interp() %>%
         cmdfun::cmd_list_to_flags(prefix = "--")
 
-    volume_flags <-
-        volumes %>%
-        stringr::str_split(";") %>%
-        unlist() %>%
-        stringr::str_c(., ":", .) %>%
-        stringr::str_c("-v ", ., ":ro") %>%
-        stringr::str_c(collapse = " ")
+    if (!is.null(volumes)) {
+        volumes <-
+            volumes %>%
+            stringr::str_split(";") %>%
+            unlist() %>%
+            stringr::str_c(., ":", .) %>%
+            stringr::str_c("-v ", ., ":ro") %>%
+            stringr::str_c(collapse = " ")
+    }
 
-    docker_cmd(c("run", docker_flags, volume_flags, image))
+    docker_cmd(c("run", docker_flags, volumes, image))
 }
 
 #' @noRd
