@@ -1,5 +1,5 @@
 Package: rutils
-Title: `rutils` is a home for commonly used utility functions
+Title: `rutils` is a home for commonly used R utility functions
 Version: 0.99.0
 Date: 2020-10-29
 Authors@R: 
@@ -25,3 +25,7 @@ Suggests:
     sessioninfo,
     rmarkdown
 VignetteBuilder: knitr
+Imports: 
+    cmdfun,
+    magrittr,
+    stringr
