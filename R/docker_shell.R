@@ -73,7 +73,9 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:devel",
     }
 
     if (verbose) {
-        message(c("run", docker_flags, volumes_ro, volumes, image))
+        print(stringr::str_c(c("run", docker_flags, volumes_ro, volumes, image),
+            collapse = " "
+        ))
     }
 
     .docker_cmd(c("run", docker_flags, volumes_ro, volumes, image))
