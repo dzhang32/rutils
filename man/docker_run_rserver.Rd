@@ -7,9 +7,11 @@
 docker_run_rserver(
   image = "bioconductor/bioconductor_docker:devel",
   port = 8888,
+  user = "rstudio",
   password = "bioc",
   name = "dz_bioc",
   rm = FALSE,
+  volumes_ro = NULL,
   volumes = NULL
 )
 }
@@ -19,6 +21,11 @@ docker_run_rserver(
 \item{port}{\code{integer(1)} port of the host which will be used to access
 RStudio server via \code{localhost::port}}
 
+\item{user}{a UN for the docker image - by default this will be part of the
+group ID 1024. The group is what permits \code{volumes} to be write-able.
+Volumes will inherit permissions from the host and therefore, must have
+group write permissions on the host.}
+
 \item{password}{\code{character(1)} password to used for RStudio server}
 
 \item{name}{\code{character(1)} name for the container.}
@@ -26,9 +33,14 @@ RStudio server via \code{localhost::port}}
 \item{rm}{\code{logical(1)} whether to use the \code{-rm} flag when running the
 container. Should the container be removed when stopped?}
 
-\item{volumes}{\code{character(1)} paths for the hosts files that you want
+\item{volumes_ro}{\code{character(1)} paths for the hosts files that you want
 accessible in the container. These will be mounted using the identical
 paths on the host and with \code{read-only} permissions.}
+
+\item{volumes}{\code{character(1)} paths for the hosts files that you want
+accessible in the container. These will NOT be mounted with \code{read-only}
+permissions. Use this option with care, recommended only for directories
+that you want to output results into.}
 }
 \description{
 A wrapper for the docker function used to run a RStudio container on a
@@ -39,7 +51,6 @@ host.
 
 \dontrun{
 docker_run_rserver()
-docker_run_rserver(volumes = "/home/dzhang/projects/dasper_analysis/raw_data;/home/dzhang/projects/dasper_analysis/scripts")
 }
 }
 \references{
