@@ -7,10 +7,13 @@
 #' @param image `character(1)` name of the image to use
 #' @param port `integer(1)` port of the host which will be used to access
 #'   RStudio server via `localhost::port`
-#' @param user a UN for the docker image - by default this will be part of the
-#'   group ID 1024. The group is what permits `volumes` to be write-able.
-#'   Volumes will inherit permissions from the host and therefore, must have
-#'   group write permissions on the host.
+#' @param user `character(1)` a UN for the docker image - by default this will
+#'   be part of the group ID 1024. The group is what permits `volumes` to be
+#'   write-able. Volumes will inherit permissions from the host and therefore,
+#'   must have group write permissions on the host (based on
+#'   https://dille.name/blog/2018/07/16/handling-file-permissions-when-writing-to-volumes-from-docker-containers/)
+#'
+#'
 #' @param password `character(1)` password to used for RStudio server
 #' @param name `character(1)` name for the container.
 #' @param rm `logical(1)` whether to use the `-rm` flag when running the
@@ -22,6 +25,8 @@
 #'   accessible in the container. These will NOT be mounted with `read-only`
 #'   permissions. Use this option with care, recommended only for directories
 #'   that you want to output results into.
+#' @param verbose `logical(1)` whether to display the command to be run (for
+#'   debugging purposes).
 #'
 #' @return NULL
 #' @export
@@ -41,7 +46,8 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:devel",
     name = "dz_bioc",
     rm = FALSE,
     volumes_ro = NULL,
-    volumes = NULL) {
+    volumes = NULL,
+    verbose = FALSE) {
 
     # set up the args for password and port
     docker_flags <- list(
@@ -64,6 +70,10 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:devel",
         volumes <-
             volumes %>%
             .volumes_to_flag(read_only = FALSE)
+    }
+
+    if (verbose) {
+        message(c("run", docker_flags, volumes_ro, volumes, image))
     }
 
     .docker_cmd(c("run", docker_flags, volumes_ro, volumes, image))

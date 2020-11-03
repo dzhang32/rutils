@@ -12,7 +12,8 @@ docker_run_rserver(
   name = "dz_bioc",
   rm = FALSE,
   volumes_ro = NULL,
-  volumes = NULL
+  volumes = NULL,
+  verbose = FALSE
 )
 }
 \arguments{
@@ -21,10 +22,11 @@ docker_run_rserver(
 \item{port}{\code{integer(1)} port of the host which will be used to access
 RStudio server via \code{localhost::port}}
 
-\item{user}{a UN for the docker image - by default this will be part of the
-group ID 1024. The group is what permits \code{volumes} to be write-able.
-Volumes will inherit permissions from the host and therefore, must have
-group write permissions on the host.}
+\item{user}{\code{character(1)} a UN for the docker image - by default this will
+be part of the group ID 1024. The group is what permits \code{volumes} to be
+write-able. Volumes will inherit permissions from the host and therefore,
+must have group write permissions on the host (based on
+https://dille.name/blog/2018/07/16/handling-file-permissions-when-writing-to-volumes-from-docker-containers/)}
 
 \item{password}{\code{character(1)} password to used for RStudio server}
 
@@ -41,6 +43,9 @@ paths on the host and with \code{read-only} permissions.}
 accessible in the container. These will NOT be mounted with \code{read-only}
 permissions. Use this option with care, recommended only for directories
 that you want to output results into.}
+
+\item{verbose}{\code{logical(1)} whether to display the command to be run (for
+debugging purposes).}
 }
 \description{
 A wrapper for the docker function used to run a RStudio container on a
