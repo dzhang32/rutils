@@ -7,24 +7,17 @@
 #' @param image `character(1)` name of the image to use
 #' @param port `integer(1)` port of the host which will be used to access
 #'   RStudio server via `localhost::port`
-#' @param user `character(1)` a UN for the docker image - by default this will
-#'   be part of the group ID 1024. The group is what permits `volumes` to be
-#'   write-able. Volumes will inherit permissions from the host and therefore,
-#'   must have group write permissions on the host (based on
-#'   https://dille.name/blog/2018/07/16/handling-file-permissions-when-writing-to-volumes-from-docker-containers/)
-#'
-#'
 #' @param password `character(1)` password to used for RStudio server
 #' @param name `character(1)` name for the container.
 #' @param rm `logical(1)` whether to use the `-rm` flag when running the
 #'   container. Should the container be removed when stopped?
-#' @param volumes_ro `character(1)` paths for the hosts files that you want
-#'   accessible in the container. These will be mounted using the identical
-#'   paths on the host and with `read-only` permissions.
 #' @param volumes `character(1)` paths for the hosts files that you want
-#'   accessible in the container. These will NOT be mounted with `read-only`
-#'   permissions. Use this option with care, recommended only for directories
-#'   that you want to output results into.
+#'   accessible in the container. See argument `permissions` for read/write
+#'   access to these.
+#' @param permissions `character(1)` if set to "match" (be careful!), then the
+#'   permissions of the mounted volumes on the container, will match that of the
+#'   host. I.e. the user executing the docker command will have permissions to
+#'   read/write/execute in the container as they did on the host.
 #' @param verbose `logical(1)` whether to display the command to be run (for
 #'   debugging purposes).
 #'
@@ -33,25 +26,26 @@
 #'
 #' @references `docker_run_rserver` is based on
 #'   `https://github.com/LieberInstitute/megadepth/blob/master/R/megadepth.R`.
+#'   The solution for the `permissions` of the `volumes` was taken from
+#'   https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine.
 #'
 #' @examples
 #'
 #' \dontrun{
 #' docker_run_rserver()
 #' }
-docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:devel",
+docker_run_rserver <- function(
+    image = "bioconductor/bioconductor_docker:devel",
     port = 8888,
-    user = "rstudio",
     password = "bioc",
     name = "dz_bioc",
     rm = FALSE,
-    volumes_ro = NULL,
     volumes = NULL,
-    verbose = FALSE) {
+    permissions = NULL,
+    verbose = TRUE) {
 
     # set up the args for password and port
     docker_flags <- list(
-        user = paste0(user, ":1024"),
         env = paste0("PASSWORD=", password),
         publish = paste0(port, ":8787"),
         rm = rm,
@@ -60,10 +54,14 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:devel",
         cmdfun::cmd_list_interp() %>%
         cmdfun::cmd_list_to_flags(prefix = "--")
 
-    if (!is.null(volumes_ro)) {
-        volumes_ro <-
-            volumes_ro %>%
-            .volumes_to_flag(read_only = TRUE)
+    # set up UID to match the host user
+    # so volume permissions also match the host
+    if(!is.null(permissions)){
+        if(permissions == "match"){
+            permissions <- "--env USERID=$UID"
+        }else{
+            stop("permissions must be `match` or NULL")
+        }
     }
 
     if (!is.null(volumes)) {
@@ -72,13 +70,14 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:devel",
             .volumes_to_flag(read_only = FALSE)
     }
 
+    docker_flags <- c("run", docker_flags, permissions, volumes, image)
+
     if (verbose) {
-        print(stringr::str_c(c("run", docker_flags, volumes_ro, volumes, image),
-            collapse = " "
-        ))
+        message("Running docker with flags: ",
+                stringr::str_c(docker_flags, collapse = " "))
     }
 
-    .docker_cmd(c("run", docker_flags, volumes_ro, volumes, image))
+    .docker_cmd(docker_flags)
 }
 
 #' @noRd
