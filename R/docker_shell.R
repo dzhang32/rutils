@@ -47,8 +47,6 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:devel",
     if (!is.null(volumes)) {
         volumes <-
             volumes %>%
-            stringr::str_split(";") %>%
-            unlist() %>%
             stringr::str_c(., ":", .) %>%
             stringr::str_c("-v ", ., ":ro") %>%
             stringr::str_c(collapse = " ")
