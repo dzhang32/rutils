@@ -14,6 +14,9 @@
 #' @param volumes `character(1)` paths for the hosts files that you want
 #'   accessible in the container. See argument `permissions` for read/write
 #'   access to these.
+#' @param volumes_ro `character(1)`. paths for the hosts files that you want
+#'   accessible in the container. These will be read-only on the container and
+#'   this option is recommended for any volumes you don't need to modify.
 #' @param permissions `character(1)` if set to "match" (be careful!), then the
 #'   permissions of the mounted volumes on the container, will match that of the
 #'   host. I.e. the user executing the docker command will have permissions to
@@ -41,7 +44,8 @@ docker_run_rserver <- function(
     name = "dz_bioc",
     rm = FALSE,
     volumes = NULL,
-    permissions = NULL,
+    volumes_ro = NULL,
+    permissions = "match",
     verbose = TRUE) {
 
     # set up the args for password and port
@@ -58,19 +62,27 @@ docker_run_rserver <- function(
     # so volume permissions also match the host
     if (!is.null(permissions)) {
         if (permissions == "match") {
-            permissions <- "--env USERID=$UID"
+            permissions <- "--env USERID=$UID --env GROUPID=1024"
         } else {
             stop("permissions must be `match` or NULL")
         }
     }
 
+    # set up volumes
+    # either with permission
     if (!is.null(volumes)) {
         volumes <-
             volumes %>%
             .volumes_to_flag(read_only = FALSE)
     }
 
-    docker_flags <- c("run", docker_flags, permissions, volumes, image)
+    if (!is.null(volumes)) {
+        volumes_ro <-
+            volumes_ro %>%
+            .volumes_to_flag(read_only = TRUE)
+    }
+
+    docker_flags <- c("run", docker_flags, permissions, volumes, volumes_ro, image)
 
     if (verbose) {
         message(
