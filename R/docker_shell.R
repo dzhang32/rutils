@@ -56,10 +56,10 @@ docker_run_rserver <- function(
 
     # set up UID to match the host user
     # so volume permissions also match the host
-    if(!is.null(permissions)){
-        if(permissions == "match"){
+    if (!is.null(permissions)) {
+        if (permissions == "match") {
             permissions <- "--env USERID=$UID"
-        }else{
+        } else {
             stop("permissions must be `match` or NULL")
         }
     }
@@ -73,8 +73,10 @@ docker_run_rserver <- function(
     docker_flags <- c("run", docker_flags, permissions, volumes, image)
 
     if (verbose) {
-        message("Running docker with flags: ",
-                stringr::str_c(docker_flags, collapse = " "))
+        message(
+            "Running docker with flags: ",
+            stringr::str_c(docker_flags, collapse = " ")
+        )
     }
 
     .docker_cmd(docker_flags)

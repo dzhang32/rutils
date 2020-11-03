@@ -7,13 +7,12 @@
 docker_run_rserver(
   image = "bioconductor/bioconductor_docker:devel",
   port = 8888,
-  user = "rstudio",
   password = "bioc",
   name = "dz_bioc",
   rm = FALSE,
-  volumes_ro = NULL,
   volumes = NULL,
-  verbose = FALSE
+  permissions = NULL,
+  verbose = TRUE
 )
 }
 \arguments{
@@ -22,12 +21,6 @@ docker_run_rserver(
 \item{port}{\code{integer(1)} port of the host which will be used to access
 RStudio server via \code{localhost::port}}
 
-\item{user}{\code{character(1)} a UN for the docker image - by default this will
-be part of the group ID 1024. The group is what permits \code{volumes} to be
-write-able. Volumes will inherit permissions from the host and therefore,
-must have group write permissions on the host (based on
-https://dille.name/blog/2018/07/16/handling-file-permissions-when-writing-to-volumes-from-docker-containers/)}
-
 \item{password}{\code{character(1)} password to used for RStudio server}
 
 \item{name}{\code{character(1)} name for the container.}
@@ -35,14 +28,14 @@ https://dille.name/blog/2018/07/16/handling-file-permissions-when-writing-to-vol
 \item{rm}{\code{logical(1)} whether to use the \code{-rm} flag when running the
 container. Should the container be removed when stopped?}
 
-\item{volumes_ro}{\code{character(1)} paths for the hosts files that you want
-accessible in the container. These will be mounted using the identical
-paths on the host and with \code{read-only} permissions.}
-
 \item{volumes}{\code{character(1)} paths for the hosts files that you want
-accessible in the container. These will NOT be mounted with \code{read-only}
-permissions. Use this option with care, recommended only for directories
-that you want to output results into.}
+accessible in the container. See argument \code{permissions} for read/write
+access to these.}
+
+\item{permissions}{\code{character(1)} if set to "match" (be careful!), then the
+permissions of the mounted volumes on the container, will match that of the
+host. I.e. the user executing the docker command will have permissions to
+read/write/execute in the container as they did on the host.}
 
 \item{verbose}{\code{logical(1)} whether to display the command to be run (for
 debugging purposes).}
@@ -61,4 +54,6 @@ docker_run_rserver()
 \references{
 \code{docker_run_rserver} is based on
 \verb{https://github.com/LieberInstitute/megadepth/blob/master/R/megadepth.R}.
+The solution for the \code{permissions} of the \code{volumes} was taken from
+https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine.
 }
