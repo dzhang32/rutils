@@ -15,7 +15,7 @@
 #'   container. Should the container be removed when stopped?
 #' @param volumes `character(1)` paths for the hosts files that you want
 #'   accessible in the container. See argument `permissions` for read/write
-#'   access to these.
+#'   access to these. Can either be a path or
 #' @param volumes_ro `character(1)`. paths for the hosts files that you want
 #'   accessible in the container. These will be read-only on the container and
 #'   this option is recommended for any volumes you don't need to modify.
@@ -98,9 +98,16 @@ docker_run_rserver <- function(
 
 #' @noRd
 .volumes_to_flag <- function(volumes, read_only = FALSE) {
-    volumes_flag <-
-        volumes %>%
-        stringr::str_c(., ":", .) %>%
+
+    # if you've already got a ":" in the volume
+    # then leave it as is, otherwise mount volume as
+    # identical path to host
+    volumes_flag <- ifelse(stringr::str_detect(volumes, ":"),
+                           volumes,
+                           stringr::str_c(volumes, ":", volumes))
+
+    # prefix with the -v flag
+    volumes_flag <- volumes_flag
         stringr::str_c("-v ", .)
 
     if (read_only) {
