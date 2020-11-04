@@ -109,8 +109,8 @@ docker_run_rserver <- function(
     )
 
     # prefix with the -v flag
-    volumes_flag <- volumes_flag
-    stringr::str_c("-v ", .)
+    volumes_flag <- volumes_flag %>%
+        stringr::str_c("-v ", .)
 
     if (read_only) {
         volumes_flag <-
