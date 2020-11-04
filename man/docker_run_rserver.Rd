@@ -11,7 +11,8 @@ docker_run_rserver(
   name = "dz_bioc",
   rm = FALSE,
   volumes = NULL,
-  permissions = NULL,
+  volumes_ro = NULL,
+  permissions = "match",
   verbose = TRUE
 )
 }
@@ -32,6 +33,10 @@ container. Should the container be removed when stopped?}
 accessible in the container. See argument \code{permissions} for read/write
 access to these.}
 
+\item{volumes_ro}{\code{character(1)}. paths for the hosts files that you want
+accessible in the container. These will be read-only on the container and
+this option is recommended for any volumes you don't need to modify.}
+
 \item{permissions}{\code{character(1)} if set to "match" (be careful!), then the
 permissions of the mounted volumes on the container, will match that of the
 host. I.e. the user executing the docker command will have permissions to
@@ -43,7 +48,9 @@ debugging purposes).}
 \description{
 A wrapper for the docker function used to run a RStudio container on a
 specified docker image. This will be available at the \code{port} specified on the
-host.
+host. Currently, the \code{permissions} argument operates through setting a USERID
+and GROUPID, which are hard-coded. Therefore, this is unlikely to work when
+directly re-applied to other users.
 }
 \examples{
 
