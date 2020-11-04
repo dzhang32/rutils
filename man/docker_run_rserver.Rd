@@ -31,7 +31,7 @@ container. Should the container be removed when stopped?}
 
 \item{volumes}{\code{character(1)} paths for the hosts files that you want
 accessible in the container. See argument \code{permissions} for read/write
-access to these.}
+access to these. Can either be a path or}
 
 \item{volumes_ro}{\code{character(1)}. paths for the hosts files that you want
 accessible in the container. These will be read-only on the container and
