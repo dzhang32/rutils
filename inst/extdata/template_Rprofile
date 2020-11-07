@@ -1,0 +1,18 @@
+## From https://lcolladotor.github.io/bioc_team_ds/config-files.html#rprofile
+
+## For usethis::use_git()
+options(usethis.protocol = "ssh")
+
+options(
+    usethis.full_name = "David Zhang",
+    usethis.description = list(
+        `Authors@R` = 'c(
+        person("David", "Zhang", role = c("aut", "cre"),
+        email = "dyzhang32r@gmail.com", comment = c(ORCID = "0000-0003-2382-8460"))
+        )'
+    )
+)
+
+## For biocthis
+options("biocthis.pkgdown" = TRUE)
+options("biocthis.testthat" = TRUE)
