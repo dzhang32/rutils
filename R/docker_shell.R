@@ -99,6 +99,7 @@ docker_run_rserver <- function(
 
 #' @noRd
 .volumes_to_flag <- function(volumes, read_only = FALSE) {
+    . <- NULL
 
     # if you've already got a ":" in the volume
     # then leave it as is, otherwise mount volume as
