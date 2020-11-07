@@ -76,7 +76,7 @@ directly re-applied to other users." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rutils</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.1</span>
       </span>
     </div>
 
@@ -166,7 +166,8 @@ container. Should the container be removed when stopped?</p></td>
       <th>volumes</th>
       <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> paths for the hosts files that you want
 accessible in the container. See argument <code>permissions</code> for read/write
-access to these. Can either be a path or</p></td>
+access to these. Can either be a path on host or in the form
+"host_path:container_path"</p></td>
     </tr>
     <tr>
       <th>volumes_ro</th>

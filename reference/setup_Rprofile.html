@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • rutils</title>
+<title>Set up a default ~/.Rprofile — setup_Rprofile • rutils</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Set up a default ~/.Rprofile — setup_Rprofile" />
+<meta property="og:description" content="Set of functions to setup default R and git configuration files" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -107,26 +108,79 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/dzhang32/rutils/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Set up a default ~/.Rprofile</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dzhang32/rutils/blob/master/R/r_setup.R'><code>R/r_setup.R</code></a></small>
+    <div class="hidden name"><code>setup_Rprofile.Rd</code></div>
     </div>
 
-    <div id="rutils-0990" class="section level1">
-<h1 class="page-header" data-toc-text="0.99.0">
-<a href="#rutils-0990" class="anchor"></a>rutils 0.99.0</h1>
-<p>NEW FEATURES</p>
-<ul>
-<li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p>Set of functions to setup default R and git configuration files</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>setup_Rprofile</span><span class='op'>(</span>
+  path <span class='op'>=</span> <span class='st'>"~/.Rprofile"</span>,
+  template <span class='op'>=</span> <span class='st'>"template_Rprofile"</span>,
+  append <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span>
+
+<span class='fu'>setup_gitconfig</span><span class='op'>(</span>
+  path <span class='op'>=</span> <span class='st'>"~/.gitconfig"</span>,
+  template <span class='op'>=</span> <span class='st'>"template_gitconfig"</span>,
+  append <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span>
+
+<span class='fu'>setup_gitignore_global</span><span class='op'>(</span>
+  path <span class='op'>=</span> <span class='st'>"~/.gitignore_global"</span>,
+  template <span class='op'>=</span> <span class='st'>"template_gitignore_global"</span>,
+  append <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>path</th>
+      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> path to the configuration file.</p></td>
+    </tr>
+    <tr>
+      <th>template</th>
+      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> name of the template configuration files
+stored in <code>inst/extdata</code></p></td>
+    </tr>
+    <tr>
+      <th>append</th>
+      <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code> whether to append to or overwrite the <code>path</code> with
+the <code>template</code>.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>These are used to setup default Rprofile/gitconfig/gitignore_global
+configurations. They may be useful if you consistently need to set up new
+instances e.g. via <code>docker_run_rserver</code>.</p>
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    
+<ul>
+<li><p><code>setup_gitconfig</code>: Set up a default ~/gitconfig</p></li>
+<li><p><code>setup_gitignore_global</code>: Set up a default ~/.gitconfig</p></li>
+</ul>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>setup_Rprofile</span><span class='op'>(</span><span class='op'>)</span>
+<span class='fu'>setup_gitconfig</span><span class='op'>(</span><span class='op'>)</span>
+<span class='fu'>setup_gitignore_global</span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 
