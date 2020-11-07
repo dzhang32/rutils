@@ -4,7 +4,7 @@
 \alias{setup_Rprofile}
 \alias{setup_gitconfig}
 \alias{setup_gitignore_global}
-\title{Set up a default ~/.Rprofile}
+\title{Set of functions to setup default R and git configuration files}
 \usage{
 setup_Rprofile(
   path = "~/.Rprofile",
@@ -34,9 +34,6 @@ stored in \code{inst/extdata}}
 the \code{template}.}
 }
 \description{
-Set of functions to setup default R and git configuration files
-}
-\details{
 These are used to setup default Rprofile/gitconfig/gitignore_global
 configurations. They may be useful if you consistently need to set up new
 instances e.g. via \code{docker_run_rserver}.

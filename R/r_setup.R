@@ -1,8 +1,6 @@
-#' Set up a default ~/.Rprofile
+#' Set of functions to setup default R and git configuration files
 #'
-#' @description Set of functions to setup default R and git configuration files
-#'
-#' @details These are used to setup default Rprofile/gitconfig/gitignore_global
+#' @description These are used to setup default Rprofile/gitconfig/gitignore_global
 #' configurations. They may be useful if you consistently need to set up new
 #' instances e.g. via `docker_run_rserver`.
 #'
