@@ -20,9 +20,9 @@ docker_run_rserver(
 \item{image}{\code{character(1)} name of the image to use}
 
 \item{port}{\code{integer(1)} port of the host which will be used to access
-RStudio server via \code{localhost::port}}
+RStudio server via \code{localhost::port}.}
 
-\item{password}{\code{character(1)} password to used for RStudio server}
+\item{password}{\code{character(1)} password to used for RStudio server.}
 
 \item{name}{\code{character(1)} name for the container.}
 
@@ -32,9 +32,9 @@ container. Should the container be removed when stopped?}
 \item{volumes}{\code{character(1)} paths for the hosts files that you want
 accessible in the container. See argument \code{permissions} for read/write
 access to these. Can either be a path on host or in the form
-"host_path:container_path"}
+"host_path:container_path".}
 
-\item{volumes_ro}{\code{character(1)}. paths for the hosts files that you want
+\item{volumes_ro}{\code{character(1)} paths for the hosts files that you want
 accessible in the container. These will be read-only on the container and
 this option is recommended for any volumes you don't need to modify.}
 

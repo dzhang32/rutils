@@ -8,16 +8,16 @@
 #'
 #' @param image `character(1)` name of the image to use
 #' @param port `integer(1)` port of the host which will be used to access
-#'   RStudio server via `localhost::port`
-#' @param password `character(1)` password to used for RStudio server
+#'   RStudio server via `localhost::port`.
+#' @param password `character(1)` password to used for RStudio server.
 #' @param name `character(1)` name for the container.
 #' @param rm `logical(1)` whether to use the `-rm` flag when running the
 #'   container. Should the container be removed when stopped?
 #' @param volumes `character(1)` paths for the hosts files that you want
 #'   accessible in the container. See argument `permissions` for read/write
 #'   access to these. Can either be a path on host or in the form
-#'   "host_path:container_path"
-#' @param volumes_ro `character(1)`. paths for the hosts files that you want
+#'   "host_path:container_path".
+#' @param volumes_ro `character(1)` paths for the hosts files that you want
 #'   accessible in the container. These will be read-only on the container and
 #'   this option is recommended for any volumes you don't need to modify.
 #' @param permissions `character(1)` if set to "match" (be careful!), then the
