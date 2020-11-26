@@ -35,17 +35,17 @@ print(citation("rutils"), bibtex = TRUE)
 #> 
 #> To cite package 'rutils' in publications use:
 #> 
-#>   David Zhang (2020). rutils: `rutils` is a home for commonly used
-#>   utility functions. R package version 0.99.0.
+#>   David Zhang (2020). rutils: `rutils` is a home for commonly used R
+#>   utility functions. R package version 0.99.2.
 #>   https://github.com/dzhang32/rutils
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Manual{,
-#>     title = {rutils: `rutils` is a home for commonly used utility functions},
+#>     title = {rutils: `rutils` is a home for commonly used R utility functions},
 #>     author = {David Zhang},
 #>     year = {2020},
-#>     note = {R package version 0.99.0},
+#>     note = {R package version 0.99.2},
 #>     url = {https://github.com/dzhang32/rutils},
 #>   }
 ```

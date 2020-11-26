@@ -16,3 +16,6 @@ options(
 ## For biocthis
 options("biocthis.pkgdown" = TRUE)
 options("biocthis.testthat" = TRUE)
+
+## Always warn on partial matching
+options(warnPartialMatchArgs = TRUE)
