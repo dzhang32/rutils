@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • rutils</title>
+<title>Calculate summary statistics — get_sum_stats • rutils</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Calculate summary statistics — get_sum_stats" />
+<meta property="og:description" content="Calculate summary statistics" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -105,66 +106,61 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Calculate summary statistics</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dzhang32/rutils/blob/master/R/get_sum_stats.R'><code>R/get_sum_stats.R</code></a></small>
+    <div class="hidden name"><code>get_sum_stats.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Calculate summary statistics</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>get_sum_stats</span><span class='op'>(</span>
+  <span class='va'>df</span>,
+  <span class='va'>sum_vars</span>,
+  group_vars <span class='op'>=</span> <span class='cn'>NULL</span>,
+  sum_funcs <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>mean <span class='op'>=</span> <span class='fu'>base</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span>, sd <span class='op'>=</span> <span class='fu'>stats</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span>, median <span class='op'>=</span> <span class='fu'>stats</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/r/stats/median.html'>median</a></span>, iqr <span class='op'>=</span>
+    <span class='fu'>stats</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/r/stats/IQR.html'>IQR</a></span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="docker_run_rserver.html">docker_run_rserver()</a></code> </p>
-        </td>
-        <td><p>Run an RStudio instance on the bioconductor docker image</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="file_path.html">file_path()</a></code> </p>
-        </td>
-        <td><p>Create a file path and/or check if it exists</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="get_sum_stats.html">get_sum_stats()</a></code> </p>
-        </td>
-        <td><p>Calculate summary statistics</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rutils.html">rutils</a></code> </p>
-        </td>
-        <td><p>rutils: home for commonly used R utility functions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="setup_Rprofile.html">setup_Rprofile()</a></code> <code><a href="setup_Rprofile.html">setup_gitconfig()</a></code> <code><a href="setup_Rprofile.html">setup_gitignore_global()</a></code> </p>
-        </td>
-        <td><p>Set of functions to setup default R and git configuration files</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>df</th>
+      <td><p>a <code>data.frame</code> object.</p></td>
+    </tr>
+    <tr>
+      <th>sum_vars</th>
+      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> vector with name of columns to <code>summarize</code>.</p></td>
+    </tr>
+    <tr>
+      <th>group_vars</th>
+      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> vector with name of columns to <code>group_by()</code></p></td>
+    </tr>
+    <tr>
+      <th>sum_funcs</th>
+      <td><p>either function or list of functions. By default, uses
+<code><a href='https://rdrr.io/r/base/mean.html'>base::mean()</a></code>, <code><a href='https://rdrr.io/r/stats/sd.html'>stats::sd()</a></code>, <code><a href='https://rdrr.io/r/stats/median.html'>stats::median()</a></code>, <code><a href='https://rdrr.io/r/stats/IQR.html'>stats::IQR()</a></code>.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p><a href='https://tibble.tidyverse.org/reference/tbl_df-class.html'>tibble</a> object containing summarized data.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='va'>iris_summary</span> <span class='op'>&lt;-</span>
+    <span class='fu'>get_sum_stats</span><span class='op'>(</span>
+        <span class='va'>iris</span>,
+        sum_vars <span class='op'>=</span> <span class='st'>"Sepal.Length"</span>,
+        group_vars <span class='op'>=</span> <span class='st'>"Species"</span>
+    <span class='op'>)</span>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
