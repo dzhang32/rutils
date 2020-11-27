@@ -29,4 +29,5 @@ Imports:
     cmdfun,
     magrittr,
     stringr,
-    readr
+    readr,
+    dplyr

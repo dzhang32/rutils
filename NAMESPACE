@@ -2,6 +2,7 @@
 
 export(docker_run_rserver)
 export(file_path)
+export(get_sum_stats)
 export(setup_Rprofile)
 export(setup_gitconfig)
 export(setup_gitignore_global)
