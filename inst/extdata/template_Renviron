@@ -1,0 +1,2 @@
+## Always error when using length > 1 logical vector as if condition
+_R_CHECK_LENGTH_1_CONDITION_=TRUE

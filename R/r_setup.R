@@ -17,12 +17,13 @@
 #'
 #' \dontrun{
 #' setup_Rprofile()
+#' setup_Renviron()
 #' setup_gitconfig()
 #' setup_gitignore_global()
 #' }
 setup_Rprofile <- function(path = "~/.Rprofile",
-    template = "template_Rprofile",
-    append = TRUE) {
+                           template = "template_Rprofile",
+                           append = TRUE) {
     .setup_file(
         path = path,
         template = template,
@@ -30,7 +31,20 @@ setup_Rprofile <- function(path = "~/.Rprofile",
     )
 }
 
-#' @describeIn setup_Rprofile Set up a default ~/gitconfig
+#' @describeIn setup_Rprofile Set up a default ~/.Renviron
+#'
+#' @export
+setup_Renviron <- function(path = "~/.Renviron",
+                           template = "template_Renviron",
+                           append = TRUE) {
+    .setup_file(
+        path = path,
+        template = template,
+        append = append
+    )
+}
+
+#' @describeIn setup_Rprofile Set up a default ~/.gitconfig
 #'
 #' @export
 setup_gitconfig <- function(path = "~/.gitconfig",
