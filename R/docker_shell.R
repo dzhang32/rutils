@@ -3,8 +3,9 @@
 #' A wrapper for the docker function used to run a RStudio container on a
 #' specified docker image. This will be available at the `port` specified on the
 #' host. Currently, the `permissions` argument operates through setting a USERID
-#' and GROUPID, which are hard-coded. Therefore, this is unlikely to work when
-#' directly re-applied to other users.
+#' and GROUPID, which are by default set to my user's settings. In order to make
+#' sure your volumes have the correct permissions, these settings should be
+#' modified to match the user of interest.
 #'
 #' @param image `character(1)` name of the image to use
 #' @param port `integer(1)` port of the host which will be used to access
@@ -24,6 +25,10 @@
 #'   permissions of the mounted volumes on the container, will match that of the
 #'   host. I.e. the user executing the docker command will have permissions to
 #'   read/write/execute in the container as they did on the host.
+#' @param USERID `integer(1)` the USERID of the user for which you would like
+#'   the permissions of the mounted volumes to match.
+#' @param GROUPID `integer(1)` the GROUPID of the user for which you would like
+#'   the permissions of the mounted volumes to match.
 #' @param verbose `logical(1)` whether to display the command to be run (for
 #'   debugging purposes).
 #'
@@ -49,6 +54,8 @@ docker_run_rserver <- function(
     volumes = NULL,
     volumes_ro = NULL,
     permissions = "match",
+    USERID = 1002, 
+    GROUPID = 1024,
     verbose = TRUE) {
 
     # set up the args for password and port
@@ -65,7 +72,10 @@ docker_run_rserver <- function(
     # so volume permissions also match the host
     if (!is.null(permissions)) {
         if (permissions == "match") {
-            permissions <- "--env USERID=1002 --env GROUPID=1024"
+            permissions <- paste0(
+                "--env USERID=", USERID, 
+                "--env GROUPID=", GROUPID
+                )
         } else {
             stop("permissions must be `match` or NULL")
         }
