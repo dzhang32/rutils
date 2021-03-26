@@ -73,7 +73,7 @@ docker_run_rserver <- function(
     if (!is.null(permissions)) {
         if (permissions == "match") {
             permissions <- paste0(
-                "--env USERID=", USERID,
+                "--env USERID=", USERID, " ",
                 "--env GROUPID=", GROUPID
             )
         } else {
