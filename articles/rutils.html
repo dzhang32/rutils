@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rutils</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.4</span>
       </span>
     </div>
 
@@ -49,7 +51,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/dzhang32/rutils/">
+  <a href="https://github.com/dzhang32/rutils/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -68,14 +70,14 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Introduction to rutils</h1>
-                        <h4 class="author">Your name</h4>
+                        <h4 data-toc-skip class="author">Your name</h4>
             <address class="author_afil">
       Your institution<br><a class="author_email" href="mailto:#"></a><a href="mailto:your.email@somewhere.com" class="email">your.email@somewhere.com</a>
       </address>
                   
-            <h4 class="date">29 December 2020</h4>
+            <h4 data-toc-skip class="date">26 March 2021</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/dzhang32/rutils/blob/master/vignettes/rutils.Rmd"><code>vignettes/rutils.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/dzhang32/rutils/blob/master/vignettes/rutils.Rmd" class="external-link"><code>vignettes/rutils.Rmd</code></a></small>
       <div class="hidden name"><code>rutils.Rmd</code></div>
 
     </div>
@@ -89,41 +91,41 @@
 <h2 class="hasAnchor">
 <a href="#install-rutils" class="anchor"></a>Install <code>rutils</code>
 </h2>
-<p><code>R</code> is an open-source statistical environment which can be easily modified to enhance its functionality via packages. <em><a href="https://bioconductor.org/packages/3.12/rutils">rutils</a></em> is a <code>R</code> package available via the <a href="http://bioconductor.org">Bioconductor</a> repository for packages. <code>R</code> can be installed on any operating system from <a href="https://cran.r-project.org/">CRAN</a> after which you can install <em><a href="https://bioconductor.org/packages/3.12/rutils">rutils</a></em> by using the following commands in your <code>R</code> session:</p>
+<p><code>R</code> is an open-source statistical environment which can be easily modified to enhance its functionality via packages. <em><a href="https://bioconductor.org/packages/3.12/rutils" class="external-link">rutils</a></em> is a <code>R</code> package available via the <a href="http://bioconductor.org" class="external-link">Bioconductor</a> repository for packages. <code>R</code> can be installed on any operating system from <a href="https://cran.r-project.org/" class="external-link">CRAN</a> after which you can install <em><a href="https://bioconductor.org/packages/3.12/rutils" class="external-link">rutils</a></em> by using the following commands in your <code>R</code> session:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span>
 <span class="op">}</span>
 
-<span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html">install</a></span><span class="op">(</span><span class="st">"rutils"</span><span class="op">)</span>
+<span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html" class="external-link">install</a></span><span class="op">(</span><span class="st">"rutils"</span><span class="op">)</span>
 
 <span class="co">## Check that you have a valid Bioconductor installation</span>
-<span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/valid.html">valid</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/valid.html" class="external-link">valid</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="required-knowledge" class="section level2">
 <h2 class="hasAnchor">
 <a href="#required-knowledge" class="anchor"></a>Required knowledge</h2>
-<p><em><a href="https://bioconductor.org/packages/3.12/rutils">rutils</a></em> is based on many other packages and in particular in those that have implemented the infrastructure needed for dealing with RNA-seq data (EDIT!). That is, packages like <em><a href="https://bioconductor.org/packages/3.12/SummarizedExperiment">SummarizedExperiment</a></em> (EDIT!).</p>
-<p>If you are asking yourself the question “Where do I start using Bioconductor?” you might be interested in <a href="http://lcolladotor.github.io/2014/10/16/startbioc/#.VkOKbq6rRuU">this blog post</a>.</p>
+<p><em><a href="https://bioconductor.org/packages/3.12/rutils" class="external-link">rutils</a></em> is based on many other packages and in particular in those that have implemented the infrastructure needed for dealing with RNA-seq data (EDIT!). That is, packages like <em><a href="https://bioconductor.org/packages/3.12/SummarizedExperiment" class="external-link">SummarizedExperiment</a></em> (EDIT!).</p>
+<p>If you are asking yourself the question “Where do I start using Bioconductor?” you might be interested in <a href="http://lcolladotor.github.io/2014/10/16/startbioc/#.VkOKbq6rRuU" class="external-link">this blog post</a>.</p>
 </div>
 <div id="asking-for-help" class="section level2">
 <h2 class="hasAnchor">
 <a href="#asking-for-help" class="anchor"></a>Asking for help</h2>
-<p>As package developers, we try to explain clearly how to use our packages and in which order to use the functions. But <code>R</code> and <code>Bioconductor</code> have a steep learning curve so it is critical to learn where to ask for help. The blog post quoted above mentions some but we would like to highlight the <a href="https://support.bioconductor.org/">Bioconductor support site</a> as the main resource for getting help: remember to use the <code>rutils</code> tag and check <a href="https://support.bioconductor.org/t/rutils/">the older posts</a>. Other alternatives are available such as creating GitHub issues and tweeting. However, please note that if you want to receive help you should adhere to the <a href="http://www.bioconductor.org/help/support/posting-guide/">posting guidelines</a>. It is particularly critical that you provide a small reproducible example and your session information so package developers can track down the source of the error.</p>
+<p>As package developers, we try to explain clearly how to use our packages and in which order to use the functions. But <code>R</code> and <code>Bioconductor</code> have a steep learning curve so it is critical to learn where to ask for help. The blog post quoted above mentions some but we would like to highlight the <a href="https://support.bioconductor.org/" class="external-link">Bioconductor support site</a> as the main resource for getting help: remember to use the <code>rutils</code> tag and check <a href="https://support.bioconductor.org/t/rutils/" class="external-link">the older posts</a>. Other alternatives are available such as creating GitHub issues and tweeting. However, please note that if you want to receive help you should adhere to the <a href="http://www.bioconductor.org/help/support/posting-guide/" class="external-link">posting guidelines</a>. It is particularly critical that you provide a small reproducible example and your session information so package developers can track down the source of the error.</p>
 </div>
 <div id="citing-rutils" class="section level2">
 <h2 class="hasAnchor">
 <a href="#citing-rutils" class="anchor"></a>Citing <code>rutils</code>
 </h2>
-<p>We hope that <em><a href="https://bioconductor.org/packages/3.12/rutils">rutils</a></em> will be useful for your research. Please use the following information to cite the package and the overall approach. Thank you!</p>
+<p>We hope that <em><a href="https://bioconductor.org/packages/3.12/rutils" class="external-link">rutils</a></em> will be useful for your research. Please use the following information to cite the package and the overall approach. Thank you!</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Citation info</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span><span class="st">"rutils"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"rutils"</span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite package 'rutils' in publications use:</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;   David Zhang (2020). rutils: `rutils` is a home for commonly used R</span>
-<span class="co">#&gt;   utility functions. R package version 0.99.3.</span>
+<span class="co">#&gt;   utility functions. R package version 0.99.4.</span>
 <span class="co">#&gt;   https://github.com/dzhang32/rutils</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
@@ -132,7 +134,7 @@
 <span class="co">#&gt;     title = {rutils: `rutils` is a home for commonly used R utility functions},</span>
 <span class="co">#&gt;     author = {David Zhang},</span>
 <span class="co">#&gt;     year = {2020},</span>
-<span class="co">#&gt;     note = {R package version 0.99.3},</span>
+<span class="co">#&gt;     note = {R package version 0.99.4},</span>
 <span class="co">#&gt;     url = {https://github.com/dzhang32/rutils},</span>
 <span class="co">#&gt;   }</span></code></pre></div>
 </div>
@@ -142,63 +144,63 @@
 <a href="#quick-start-to-using-to-rutils" class="anchor"></a>Quick start to using to <code>rutils</code>
 </h1>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/dzhang32/rutils">"rutils"</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/dzhang32/rutils" class="external-link">"rutils"</a></span><span class="op">)</span></code></pre></div>
 <p>Edit this as you see fit =)</p>
 <p>Here is an example of you can cite your package inside the vignette:</p>
 <ul>
 <li>
-<em><a href="https://bioconductor.org/packages/3.12/rutils">rutils</a></em> <a id="cite-Zhang_2020"></a>(<a href="https://github.com/dzhang32/rutils">Zhang, 2020</a>)</li>
+<em><a href="https://bioconductor.org/packages/3.12/rutils" class="external-link">rutils</a></em> <a id="cite-Zhang_2020"></a>(<a href="https://github.com/dzhang32/rutils" class="external-link">Zhang, 2020</a>)</li>
 </ul>
 </div>
 <div id="reproducibility" class="section level1">
 <h1 class="hasAnchor">
 <a href="#reproducibility" class="anchor"></a>Reproducibility</h1>
-<p>The <em><a href="https://bioconductor.org/packages/3.12/rutils">rutils</a></em> package (<a href="https://github.com/dzhang32/rutils">Zhang, 2020</a>) was made possible thanks to:</p>
+<p>The <em><a href="https://bioconductor.org/packages/3.12/rutils" class="external-link">rutils</a></em> package (<a href="https://github.com/dzhang32/rutils" class="external-link">Zhang, 2020</a>) was made possible thanks to:</p>
 <ul>
-<li>R <a id="cite-R_Core_Team_2020"></a>(<a href="https://www.R-project.org/">R Core Team, 2020</a>)</li>
+<li>R <a id="cite-R_Core_Team_2020"></a>(<a href="https://www.R-project.org/" class="external-link">R Core Team, 2020</a>)</li>
 <li>
-<em><a href="https://bioconductor.org/packages/3.12/BiocStyle">BiocStyle</a></em> <a id="cite-Oles_2020"></a>(<a href="https://github.com/Bioconductor/BiocStyle">Oleś, Morgan, and Huber, 2020</a>)</li>
+<em><a href="https://bioconductor.org/packages/3.12/BiocStyle" class="external-link">BiocStyle</a></em> <a id="cite-Oles_2020"></a>(<a href="https://github.com/Bioconductor/BiocStyle" class="external-link">Oleś, Morgan, and Huber, 2020</a>)</li>
 <li>
-<em><a href="https://CRAN.R-project.org/package=knitcitations">knitcitations</a></em> <a id="cite-Boettiger_2020"></a>(<a href="https://github.com/cboettig/knitcitations">Boettiger, 2020</a>)</li>
+<em><a href="https://CRAN.R-project.org/package=knitcitations" class="external-link">knitcitations</a></em> <a id="cite-Boettiger_2021"></a>(<a href="https://github.com/cboettig/knitcitations" class="external-link">Boettiger, 2021</a>)</li>
 <li>
-<em><a href="https://CRAN.R-project.org/package=knitr">knitr</a></em> <a id="cite-Xie_2020"></a>(<a href="https://yihui.org/knitr/">Xie, 2020</a>)</li>
+<em><a href="https://CRAN.R-project.org/package=knitr" class="external-link">knitr</a></em> <a id="cite-Xie_2021"></a>(<a href="https://yihui.org/knitr/" class="external-link">Xie, 2021</a>)</li>
 <li>
-<em><a href="https://CRAN.R-project.org/package=rmarkdown">rmarkdown</a></em> <a id="cite-Allaire_2020"></a>(<a href="https://github.com/rstudio/rmarkdown">Allaire, Xie, McPherson, Luraschi, et al., 2020</a>)</li>
+<em><a href="https://CRAN.R-project.org/package=rmarkdown" class="external-link">rmarkdown</a></em> <a id="cite-Allaire_2021"></a>(<a href="https://github.com/rstudio/rmarkdown" class="external-link">Allaire, Xie, McPherson, Luraschi et al., 2021</a>)</li>
 <li>
-<em><a href="https://CRAN.R-project.org/package=sessioninfo">sessioninfo</a></em> <a id="cite-Csardi_2018"></a>(<a href="https://github.com/r-lib/sessioninfo#readme">Csárdi, core, Wickham, Chang, et al., 2018</a>)</li>
+<em><a href="https://CRAN.R-project.org/package=sessioninfo" class="external-link">sessioninfo</a></em> <a id="cite-Csardi_2018"></a>(<a href="https://github.com/r-lib/sessioninfo#readme" class="external-link">Csárdi, core, Wickham, Chang et al., 2018</a>)</li>
 <li>
-<em><a href="https://CRAN.R-project.org/package=testthat">testthat</a></em> <a id="cite-Wickham_2011"></a>(<a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf">Wickham, 2011</a>)</li>
+<em><a href="https://CRAN.R-project.org/package=testthat" class="external-link">testthat</a></em> <a id="cite-Wickham_2011"></a>(<a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf" class="external-link">Wickham, 2011</a>)</li>
 </ul>
-<p>This package was developed using <em><a href="https://github.com/lcolladotor/biocthis">biocthis</a></em>.</p>
+<p>This package was developed using <em><a href="https://github.com/lcolladotor/biocthis" class="external-link">biocthis</a></em>.</p>
 <p>Code for creating the vignette</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Create the vignette</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/rstudio/rmarkdown">"rmarkdown"</a></span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/rmarkdown/man/render.html">render</a></span><span class="op">(</span><span class="st">"rutils.Rmd"</span>, <span class="st">"BiocStyle::html_document"</span><span class="op">)</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/rstudio/rmarkdown" class="external-link">"rmarkdown"</a></span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/system.time.html" class="external-link">system.time</a></span><span class="op">(</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/render.html" class="external-link">render</a></span><span class="op">(</span><span class="st">"rutils.Rmd"</span>, <span class="st">"BiocStyle::html_document"</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co">## Extract the R code</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://yihui.org/knitr/">"knitr"</a></span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/knitr/man/knit.html">knit</a></span><span class="op">(</span><span class="st">"rutils.Rmd"</span>, tangle <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://yihui.org/knitr/" class="external-link">"knitr"</a></span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/knitr/man/knit.html" class="external-link">knit</a></span><span class="op">(</span><span class="st">"rutils.Rmd"</span>, tangle <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Clean up</span>
-<span class="fu"><a href="https://rdrr.io/r/base/files.html">file.remove</a></span><span class="op">(</span><span class="st">"rutils.bib"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.remove</a></span><span class="op">(</span><span class="st">"rutils.bib"</span><span class="op">)</span>
 <span class="co">#&gt; [1] TRUE</span></code></pre></div>
 <p>Date the vignette was generated.</p>
-<pre><code>#&gt; [1] "2020-12-29 18:39:15 UTC"</code></pre>
+<pre><code>#&gt; [1] "2021-03-26 15:16:41 UTC"</code></pre>
 <p>Wallclock time spent generating the vignette.</p>
-<pre><code>#&gt; Time difference of 1.134 secs</code></pre>
+<pre><code>#&gt; Time difference of 1.217 secs</code></pre>
 <p><code>R</code> session information.</p>
 <pre><code>#&gt; ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
 #&gt;  setting  value                       
 #&gt;  version  R version 4.0.3 (2020-10-10)
-#&gt;  os       Ubuntu 20.04 LTS            
+#&gt;  os       Ubuntu 20.04.1 LTS          
 #&gt;  system   x86_64, linux-gnu           
 #&gt;  ui       X11                         
 #&gt;  language (EN)                        
 #&gt;  collate  en_US.UTF-8                 
 #&gt;  ctype    en_US.UTF-8                 
 #&gt;  tz       Etc/UTC                     
-#&gt;  date     2020-12-29                  
+#&gt;  date     2021-03-26                  
 #&gt; 
 #&gt; ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
 #&gt;  package       * version    date       lib source                                 
@@ -206,40 +208,44 @@
 #&gt;  BiocManager     1.30.10    2019-11-16 [2] CRAN (R 4.0.3)                         
 #&gt;  BiocStyle     * 2.18.1     2020-11-24 [1] Bioconductor                           
 #&gt;  bookdown        0.21       2020-10-13 [1] RSPM (R 4.0.2)                         
-#&gt;  cli             2.2.0      2020-11-20 [2] RSPM (R 4.0.3)                         
-#&gt;  crayon          1.3.4      2017-09-16 [2] RSPM (R 4.0.0)                         
-#&gt;  desc            1.2.0      2018-05-01 [2] RSPM (R 4.0.0)                         
+#&gt;  bslib           0.2.4      2021-01-25 [1] RSPM (R 4.0.3)                         
+#&gt;  cachem          1.0.4      2021-02-13 [2] RSPM (R 4.0.3)                         
+#&gt;  cli             2.3.1      2021-02-23 [2] RSPM (R 4.0.3)                         
+#&gt;  crayon          1.4.1      2021-02-08 [2] RSPM (R 4.0.3)                         
+#&gt;  desc            1.3.0      2021-03-05 [2] RSPM (R 4.0.3)                         
 #&gt;  digest          0.6.27     2020-10-24 [2] RSPM (R 4.0.3)                         
 #&gt;  evaluate        0.14       2019-05-28 [2] RSPM (R 4.0.0)                         
-#&gt;  fansi           0.4.1      2020-01-08 [2] RSPM (R 4.0.0)                         
+#&gt;  fastmap         1.1.0      2021-01-25 [2] RSPM (R 4.0.3)                         
 #&gt;  fs              1.5.0      2020-07-31 [2] RSPM (R 4.0.2)                         
 #&gt;  generics        0.1.0      2020-10-31 [1] RSPM (R 4.0.3)                         
 #&gt;  glue            1.4.2      2020-08-27 [2] RSPM (R 4.0.2)                         
-#&gt;  htmltools       0.5.0      2020-06-16 [2] RSPM (R 4.0.1)                         
+#&gt;  htmltools       0.5.1.1    2021-01-22 [2] RSPM (R 4.0.3)                         
 #&gt;  httr            1.4.2      2020-07-20 [2] RSPM (R 4.0.2)                         
+#&gt;  jquerylib       0.1.3      2020-12-17 [1] RSPM (R 4.0.3)                         
 #&gt;  jsonlite        1.7.2      2020-12-09 [2] RSPM (R 4.0.3)                         
-#&gt;  knitcitations * 1.0.11     2020-12-29 [1] Github (cboettig/knitcitations@23750d5)
-#&gt;  knitr           1.30       2020-09-22 [2] RSPM (R 4.0.2)                         
-#&gt;  lubridate       1.7.9.2    2020-11-13 [1] RSPM (R 4.0.3)                         
+#&gt;  knitcitations * 1.0.12     2021-03-26 [1] Github (cboettig/knitcitations@60bf3fe)
+#&gt;  knitr           1.31       2021-01-27 [2] RSPM (R 4.0.3)                         
+#&gt;  lubridate       1.7.10     2021-02-26 [1] RSPM (R 4.0.3)                         
 #&gt;  magrittr        2.0.1      2020-11-17 [2] RSPM (R 4.0.3)                         
-#&gt;  memoise         1.1.0      2017-04-21 [2] RSPM (R 4.0.0)                         
-#&gt;  pkgdown         1.6.1.9000 2020-12-29 [1] Github (r-lib/pkgdown@6094ac3)         
-#&gt;  plyr            1.8.6      2020-03-03 [1] RSPM (R 4.0.2)                         
+#&gt;  memoise         2.0.0      2021-01-26 [2] RSPM (R 4.0.3)                         
+#&gt;  pkgdown         1.6.1.9001 2021-03-26 [1] Github (r-lib/pkgdown@9a5a8f5)         
+#&gt;  plyr            1.8.6      2020-03-03 [1] RSPM (R 4.0.3)                         
 #&gt;  R6              2.5.0      2020-10-28 [2] RSPM (R 4.0.3)                         
-#&gt;  ragg            0.4.0      2020-10-05 [1] RSPM (R 4.0.3)                         
-#&gt;  Rcpp            1.0.5      2020-07-06 [2] RSPM (R 4.0.2)                         
-#&gt;  RefManageR      1.3.0      2020-12-29 [1] Github (ropensci/RefManageR@ab8fe60)   
-#&gt;  rlang           0.4.9      2020-11-26 [2] RSPM (R 4.0.3)                         
-#&gt;  rmarkdown       2.6        2020-12-14 [1] RSPM (R 4.0.3)                         
+#&gt;  ragg            1.1.2      2021-03-17 [1] RSPM (R 4.0.4)                         
+#&gt;  Rcpp            1.0.6      2021-01-15 [2] RSPM (R 4.0.3)                         
+#&gt;  RefManageR      1.3.2      2021-03-26 [1] Github (ropensci/RefManageR@5a8a874)   
+#&gt;  rlang           0.4.10     2020-12-30 [2] RSPM (R 4.0.3)                         
+#&gt;  rmarkdown       2.7        2021-02-19 [1] RSPM (R 4.0.3)                         
 #&gt;  rprojroot       2.0.2      2020-11-15 [2] RSPM (R 4.0.3)                         
-#&gt;  rutils        * 0.99.3     2020-12-29 [1] Bioconductor                           
+#&gt;  rutils        * 0.99.4     2021-03-26 [1] Bioconductor                           
+#&gt;  sass            0.3.1      2021-01-24 [1] RSPM (R 4.0.3)                         
 #&gt;  sessioninfo   * 1.1.1      2018-11-05 [2] RSPM (R 4.0.0)                         
 #&gt;  stringi         1.5.3      2020-09-09 [2] RSPM (R 4.0.2)                         
 #&gt;  stringr         1.4.0      2019-02-10 [2] RSPM (R 4.0.0)                         
-#&gt;  systemfonts     0.3.2      2020-09-29 [1] RSPM (R 4.0.3)                         
-#&gt;  textshaping     0.2.1      2020-11-13 [1] RSPM (R 4.0.3)                         
-#&gt;  withr           2.3.0      2020-09-22 [2] RSPM (R 4.0.2)                         
-#&gt;  xfun            0.19       2020-10-30 [2] RSPM (R 4.0.3)                         
+#&gt;  systemfonts     1.0.1      2021-02-09 [1] RSPM (R 4.0.3)                         
+#&gt;  textshaping     0.3.3      2021-03-16 [1] RSPM (R 4.0.4)                         
+#&gt;  withr           2.4.1      2021-01-26 [2] RSPM (R 4.0.3)                         
+#&gt;  xfun            0.22       2021-03-11 [2] RSPM (R 4.0.3)                         
 #&gt;  xml2            1.3.2      2020-04-23 [2] RSPM (R 4.0.0)                         
 #&gt;  yaml            2.2.1      2020-02-01 [2] RSPM (R 4.0.0)                         
 #&gt; 
@@ -250,16 +256,16 @@
 <div id="bibliography" class="section level1">
 <h1 class="hasAnchor">
 <a href="#bibliography" class="anchor"></a>Bibliography</h1>
-<p>This vignette was generated using <em><a href="https://bioconductor.org/packages/3.12/BiocStyle">BiocStyle</a></em> (<a href="https://github.com/Bioconductor/BiocStyle">Oleś, Morgan, and Huber, 2020</a>) with <em><a href="https://CRAN.R-project.org/package=knitr">knitr</a></em> (<a href="https://yihui.org/knitr/">Xie, 2020</a>) and <em><a href="https://CRAN.R-project.org/package=rmarkdown">rmarkdown</a></em> (<a href="https://github.com/rstudio/rmarkdown">Allaire, Xie, McPherson, Luraschi, et al., 2020</a>) running behind the scenes.</p>
-<p>Citations made with <em><a href="https://CRAN.R-project.org/package=knitcitations">knitcitations</a></em> (<a href="https://github.com/cboettig/knitcitations">Boettiger, 2020</a>).</p>
-<p>[1] J. Allaire, Y. Xie, J. McPherson, J. Luraschi, et al. <em>rmarkdown: Dynamic Documents for R</em>. R package version 2.6. 2020. &lt;URL: <a href="https://github.com/rstudio/rmarkdown" class="uri">https://github.com/rstudio/rmarkdown</a>&gt;.</p>
-<p>[2] C. Boettiger. <em>knitcitations: Citations for ‘Knitr’ Markdown Files</em>. R package version 1.0.11. 2020. &lt;URL: <a href="https://github.com/cboettig/knitcitations" class="uri">https://github.com/cboettig/knitcitations</a>&gt;.</p>
-<p>[3] G. Csárdi, R. core, H. Wickham, W. Chang, et al. <em>sessioninfo: R Session Information</em>. R package version 1.1.1. 2018. &lt;URL: <a href="https://github.com/r-lib/sessioninfo#readme" class="uri">https://github.com/r-lib/sessioninfo#readme</a>&gt;.</p>
-<p>[4] A. Oleś, M. Morgan, and W. Huber. <em>BiocStyle: Standard styles for vignettes and other Bioconductor documents</em>. R package version 2.18.1. 2020. &lt;URL: <a href="https://github.com/Bioconductor/BiocStyle" class="uri">https://github.com/Bioconductor/BiocStyle</a>&gt;.</p>
-<p>[5] R Core Team. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. Vienna, Austria, 2020. &lt;URL: <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>&gt;.</p>
-<p>[6] H. Wickham. “testthat: Get Started with Testing”. In: <em>The R Journal</em> 3 (2011), pp. 5-10. &lt;URL: <a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf" class="uri">https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf</a>&gt;.</p>
-<p>[7] Y. Xie. <em>knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. R package version 1.30. 2020. &lt;URL: <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>&gt;.</p>
-<p>[8] D. Zhang. <em>rutils: <code>rutils</code> is a home for commonly used R utility functions</em>. R package version 0.99.3. 2020. &lt;URL: <a href="https://github.com/dzhang32/rutils" class="uri">https://github.com/dzhang32/rutils</a>&gt;.</p>
+<p>This vignette was generated using <em><a href="https://bioconductor.org/packages/3.12/BiocStyle" class="external-link">BiocStyle</a></em> (<a href="https://github.com/Bioconductor/BiocStyle" class="external-link">Oleś, Morgan, and Huber, 2020</a>) with <em><a href="https://CRAN.R-project.org/package=knitr" class="external-link">knitr</a></em> (<a href="https://yihui.org/knitr/" class="external-link">Xie, 2021</a>) and <em><a href="https://CRAN.R-project.org/package=rmarkdown" class="external-link">rmarkdown</a></em> (<a href="https://github.com/rstudio/rmarkdown" class="external-link">Allaire, Xie, McPherson, Luraschi et al., 2021</a>) running behind the scenes.</p>
+<p>Citations made with <em><a href="https://CRAN.R-project.org/package=knitcitations" class="external-link">knitcitations</a></em> (<a href="https://github.com/cboettig/knitcitations" class="external-link">Boettiger, 2021</a>).</p>
+<p>[1] J. Allaire, Y. Xie, J. McPherson, J. Luraschi, et al. <em>rmarkdown: Dynamic Documents for R</em>. R package version 2.7. 2021. &lt;URL: <a href="https://github.com/rstudio/rmarkdown" class="external-link uri">https://github.com/rstudio/rmarkdown</a>&gt;.</p>
+<p>[2] C. Boettiger. <em>knitcitations: Citations for ‘Knitr’ Markdown Files</em>. R package version 1.0.12. 2021. &lt;URL: <a href="https://github.com/cboettig/knitcitations" class="external-link uri">https://github.com/cboettig/knitcitations</a>&gt;.</p>
+<p>[3] G. Csárdi, R. core, H. Wickham, W. Chang, et al. <em>sessioninfo: R Session Information</em>. R package version 1.1.1. 2018. &lt;URL: <a href="https://github.com/r-lib/sessioninfo#readme" class="external-link uri">https://github.com/r-lib/sessioninfo#readme</a>&gt;.</p>
+<p>[4] A. Oleś, M. Morgan, and W. Huber. <em>BiocStyle: Standard styles for vignettes and other Bioconductor documents</em>. R package version 2.18.1. 2020. &lt;URL: <a href="https://github.com/Bioconductor/BiocStyle" class="external-link uri">https://github.com/Bioconductor/BiocStyle</a>&gt;.</p>
+<p>[5] R Core Team. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. Vienna, Austria, 2020. &lt;URL: <a href="https://www.R-project.org/" class="external-link uri">https://www.R-project.org/</a>&gt;.</p>
+<p>[6] H. Wickham. “testthat: Get Started with Testing”. In: <em>The R Journal</em> 3 (2011), pp. 5-10. &lt;URL: <a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf" class="external-link uri">https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf</a>&gt;.</p>
+<p>[7] Y. Xie. <em>knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. R package version 1.31. 2021. &lt;URL: <a href="https://yihui.org/knitr/" class="external-link uri">https://yihui.org/knitr/</a>&gt;.</p>
+<p>[8] D. Zhang. <em>rutils: <code>rutils</code> is a home for commonly used R utility functions</em>. R package version 0.99.4. 2020. &lt;URL: <a href="https://github.com/dzhang32/rutils" class="external-link uri">https://github.com/dzhang32/rutils</a>&gt;.</p>
 </div>
   </div>
 
@@ -274,11 +280,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by David Zhang.</p>
+  <p></p>
+<p>Developed by David Zhang.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link external-link">pkgdown</a> 1.6.1.9001.</p>
 </div>
 
       </footer>
@@ -286,6 +294,8 @@
 
   
 
+
+  
 
   </body>
 </html>

@@ -43,8 +43,11 @@
 <meta property="og:description" content="A wrapper for the docker function used to run a RStudio container on a
 specified docker image. This will be available at the port specified on the
 host. Currently, the permissions argument operates through setting a USERID
-and GROUPID, which are hard-coded. Therefore, this is unlikely to work when
-directly re-applied to other users." />
+and GROUPID, which are by default set to my user's settings. In order to make
+sure your volumes have the correct permissions, these settings should be
+modified to match the user of interest." />
+
+
 
 
 
@@ -60,9 +63,18 @@ directly re-applied to other users." />
 
 
 
+<!-- dependencies from examples -->
+
+
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -76,7 +88,7 @@ directly re-applied to other users." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rutils</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.4</span>
       </span>
     </div>
 
@@ -121,8 +133,9 @@ directly re-applied to other users." />
     <p>A wrapper for the docker function used to run a RStudio container on a
 specified docker image. This will be available at the <code>port</code> specified on the
 host. Currently, the <code>permissions</code> argument operates through setting a USERID
-and GROUPID, which are hard-coded. Therefore, this is unlikely to work when
-directly re-applied to other users.</p>
+and GROUPID, which are by default set to my user's settings. In order to make
+sure your volumes have the correct permissions, these settings should be
+modified to match the user of interest.</p>
     </div>
 
     <pre class="usage"><span class='fu'>docker_run_rserver</span><span class='op'>(</span>
@@ -134,6 +147,8 @@ directly re-applied to other users.</p>
   volumes <span class='op'>=</span> <span class='cn'>NULL</span>,
   volumes_ro <span class='op'>=</span> <span class='cn'>NULL</span>,
   permissions <span class='op'>=</span> <span class='st'>"match"</span>,
+  USERID <span class='op'>=</span> <span class='fl'>1002</span>,
+  GROUPID <span class='op'>=</span> <span class='fl'>1024</span>,
   verbose <span class='op'>=</span> <span class='cn'>TRUE</span>
 <span class='op'>)</span></pre>
 
@@ -183,6 +198,16 @@ host. I.e. the user executing the docker command will have permissions to
 read/write/execute in the container as they did on the host.</p></td>
     </tr>
     <tr>
+      <th>USERID</th>
+      <td><p><code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code> the USERID of the user for which you would like
+the permissions of the mounted volumes to match.</p></td>
+    </tr>
+    <tr>
+      <th>GROUPID</th>
+      <td><p><code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code> the GROUPID of the user for which you would like
+the permissions of the mounted volumes to match.</p></td>
+    </tr>
+    <tr>
       <th>verbose</th>
       <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code> whether to display the command to be run (for
 debugging purposes).</p></td>
@@ -213,11 +238,11 @@ https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by David Zhang.</p>
+  <p><p>Developed by David Zhang.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -225,6 +250,8 @@ https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine.</p>
 
   
 
+
+  
 
   </body>
 </html>
