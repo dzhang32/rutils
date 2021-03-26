@@ -36,7 +36,7 @@ print(citation("rutils"), bibtex = TRUE)
 #> To cite package 'rutils' in publications use:
 #> 
 #>   David Zhang (2020). rutils: `rutils` is a home for commonly used R
-#>   utility functions. R package version 0.99.2.
+#>   utility functions. R package version 0.99.4.
 #>   https://github.com/dzhang32/rutils
 #> 
 #> A BibTeX entry for LaTeX users is
@@ -45,7 +45,7 @@ print(citation("rutils"), bibtex = TRUE)
 #>     title = {rutils: `rutils` is a home for commonly used R utility functions},
 #>     author = {David Zhang},
 #>     year = {2020},
-#>     note = {R package version 0.99.2},
+#>     note = {R package version 0.99.4},
 #>     url = {https://github.com/dzhang32/rutils},
 #>   }
 ```
@@ -71,7 +71,7 @@ By contributing to this project, you agree to abide by its terms.
     *[rcmdcheck](https://CRAN.R-project.org/package=rcmdcheck)*
     customized to use [Bioconductor’s docker
     containers](https://www.bioconductor.org/help/docker/) and
-    *[BiocCheck](https://bioconductor.org/packages/3.11/BiocCheck)*.
+    *[BiocCheck](https://bioconductor.org/packages/3.12/BiocCheck)*.
   - Code coverage assessment is possible thanks to
     [codecov](https://codecov.io/gh) and
     *[covr](https://CRAN.R-project.org/package=covr)*.

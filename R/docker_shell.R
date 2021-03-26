@@ -54,7 +54,7 @@ docker_run_rserver <- function(
     volumes = NULL,
     volumes_ro = NULL,
     permissions = "match",
-    USERID = 1002, 
+    USERID = 1002,
     GROUPID = 1024,
     verbose = TRUE) {
 
@@ -73,9 +73,9 @@ docker_run_rserver <- function(
     if (!is.null(permissions)) {
         if (permissions == "match") {
             permissions <- paste0(
-                "--env USERID=", USERID, 
+                "--env USERID=", USERID,
                 "--env GROUPID=", GROUPID
-                )
+            )
         } else {
             stop("permissions must be `match` or NULL")
         }

@@ -2,6 +2,7 @@
 % Please edit documentation in R/r_setup.R
 \name{setup_Rprofile}
 \alias{setup_Rprofile}
+\alias{setup_Renviron}
 \alias{setup_gitconfig}
 \alias{setup_gitignore_global}
 \title{Set of functions to setup default R and git configuration files}
@@ -9,6 +10,12 @@
 setup_Rprofile(
   path = "~/.Rprofile",
   template = "template_Rprofile",
+  append = TRUE
+)
+
+setup_Renviron(
+  path = "~/.Renviron",
+  template = "template_Renviron",
   append = TRUE
 )
 
@@ -40,7 +47,9 @@ instances e.g. via \code{docker_run_rserver}.
 }
 \section{Functions}{
 \itemize{
-\item \code{setup_gitconfig}: Set up a default ~/gitconfig
+\item \code{setup_Renviron}: Set up a default ~/.Renviron
+
+\item \code{setup_gitconfig}: Set up a default ~/.gitconfig
 
 \item \code{setup_gitignore_global}: Set up a default ~/.gitconfig
 }}
@@ -49,6 +58,7 @@ instances e.g. via \code{docker_run_rserver}.
 
 \dontrun{
 setup_Rprofile()
+setup_Renviron()
 setup_gitconfig()
 setup_gitignore_global()
 }

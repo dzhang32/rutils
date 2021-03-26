@@ -22,8 +22,8 @@
 #' setup_gitignore_global()
 #' }
 setup_Rprofile <- function(path = "~/.Rprofile",
-                           template = "template_Rprofile",
-                           append = TRUE) {
+    template = "template_Rprofile",
+    append = TRUE) {
     .setup_file(
         path = path,
         template = template,
@@ -35,8 +35,8 @@ setup_Rprofile <- function(path = "~/.Rprofile",
 #'
 #' @export
 setup_Renviron <- function(path = "~/.Renviron",
-                           template = "template_Renviron",
-                           append = TRUE) {
+    template = "template_Renviron",
+    append = TRUE) {
     .setup_file(
         path = path,
         template = template,

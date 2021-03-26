@@ -13,6 +13,8 @@ docker_run_rserver(
   volumes = NULL,
   volumes_ro = NULL,
   permissions = "match",
+  USERID = 1002,
+  GROUPID = 1024,
   verbose = TRUE
 )
 }
@@ -43,6 +45,12 @@ permissions of the mounted volumes on the container, will match that of the
 host. I.e. the user executing the docker command will have permissions to
 read/write/execute in the container as they did on the host.}
 
+\item{USERID}{\code{integer(1)} the USERID of the user for which you would like
+the permissions of the mounted volumes to match.}
+
+\item{GROUPID}{\code{integer(1)} the GROUPID of the user for which you would like
+the permissions of the mounted volumes to match.}
+
 \item{verbose}{\code{logical(1)} whether to display the command to be run (for
 debugging purposes).}
 }
@@ -50,8 +58,9 @@ debugging purposes).}
 A wrapper for the docker function used to run a RStudio container on a
 specified docker image. This will be available at the \code{port} specified on the
 host. Currently, the \code{permissions} argument operates through setting a USERID
-and GROUPID, which are hard-coded. Therefore, this is unlikely to work when
-directly re-applied to other users.
+and GROUPID, which are by default set to my user's settings. In order to make
+sure your volumes have the correct permissions, these settings should be
+modified to match the user of interest.
 }
 \examples{
 
