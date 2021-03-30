@@ -5,7 +5,7 @@
 \title{Run an RStudio instance on the bioconductor docker image}
 \usage{
 docker_run_rserver(
-  image = "bioconductor/bioconductor_docker:devel",
+  image = "bioconductor/bioconductor_docker:RELEASE_3_12",
   port = 8888,
   password = "bioc",
   name = "dz_bioc",
