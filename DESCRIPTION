@@ -30,7 +30,5 @@ Imports:
     magrittr,
     stringr,
     readr,
-    dplyr,
-    reactable, 
-    ggplot2
+    dplyr
 
