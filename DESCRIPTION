@@ -31,5 +31,6 @@ Imports:
     stringr,
     readr,
     dplyr,
-    reactable
+    reactable, 
+    ggplot2
 
