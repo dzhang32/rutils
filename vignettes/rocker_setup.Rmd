@@ -34,7 +34,6 @@ registerS3method("knit_print", "reactable", Rmdplate::knit_print_reactable)
 ##### Set defaults for ggplots #####
 
 old_theme <- theme_set(ggpubr::theme_pubr())
-
 ```
 
 > Aim: Connect to R Studio server using docker
@@ -93,7 +92,6 @@ First, open an `R` terminal and install the `rutils` package from GitHub via:
 
 # this requires R version >= 4.0
 devtools::install_github("dzhang32/rutils")
-
 ```
 
 Next, run the `rutils::docker_run_rserver()` function within the `R` terminal. At a minimum, you should set the `image`, `port` and `name` arguments explained below. Setting the `verbose` argument to TRUE will print the flags that were used within the `docker` command and can be useful for debugging or logging your session. 
@@ -101,12 +99,11 @@ Next, run the `rutils::docker_run_rserver()` function within the `R` terminal. A
 ```{r docker-run-rserver-ex1, eval = FALSE}
 
 rutils::docker_run_rserver(
-  image = "bioconductor/bioconductor_docker:RELEASE_3_13", # rocker image 
-  port = 8787, # port on which the host will have present R Studio server 
-  name = "example", # name of docker process
-  verbose = TRUE # whether to print out the flags passed to the docker command 
+    image = "bioconductor/bioconductor_docker:RELEASE_3_13", # rocker image
+    port = 8787, # port on which the host will have present R Studio server
+    name = "example", # name of docker process
+    verbose = TRUE # whether to print out the flags passed to the docker command
 )
-
 ```
 
 <br><br>
@@ -136,7 +133,6 @@ More details of the Bioconductor docker can be found [here](https://www.biocondu
 ```{r rserver-ex, echo = FALSE, fig.cap = "Example of R Studio server login screen via localhost:8787"}
 
 knitr::include_graphics("../figures/rocker_guide/rstudio_server_ex.png")
-
 ```
 
 <br><br>
@@ -151,25 +147,24 @@ Below is an example of running `rutils::docker_run_rserver()` whilst mounting vo
 
 ```{r docker-run-rserver-ex2, eval = FALSE}
 
-# volumes - paths will be mounted with user permissions 
+# volumes - paths will be mounted with user permissions
 # matching user specified by the USERID and GROUPID arguments
 # volumes_ro - paths will be mounted with read-only access
 rutils::docker_run_rserver(
-  image = "bioconductor/bioconductor_docker:RELEASE_3_13", 
-  port = 8787, 
-  name = "example_2",
-  verbose = TRUE, 
-  volumes = c(
-    "/path/to/mounted/dir" 
-  ), 
-  volumes_ro = c(
-    "/path/to/mounted/dir"
+    image = "bioconductor/bioconductor_docker:RELEASE_3_13",
+    port = 8787,
+    name = "example_2",
+    verbose = TRUE,
+    volumes = c(
+        "/path/to/mounted/dir"
     ),
-  permissions = "match",
-  USERID = 1000, 
-  GROUPID = 1000
+    volumes_ro = c(
+        "/path/to/mounted/dir"
+    ),
+    permissions = "match",
+    USERID = 1000,
+    GROUPID = 1000
 )
-
 ```
 
 <br><br>
@@ -184,6 +179,5 @@ library("sessioninfo")
 options(width = 120)
 
 session_info()
-
 ```
 

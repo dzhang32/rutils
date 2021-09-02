@@ -55,7 +55,6 @@ instances e.g. via \code{docker_run_rserver}.
 }}
 
 \examples{
-
 \dontrun{
 setup_Rprofile()
 setup_Renviron()

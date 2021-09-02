@@ -41,12 +41,10 @@
 #'   https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine.
 #'
 #' @examples
-#'
 #' \dontrun{
 #' docker_run_rserver()
 #' }
-docker_run_rserver <- function(
-    image = "bioconductor/bioconductor_docker:RELEASE_3_12",
+docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE_3_12",
     port = 8888,
     password = "bioc",
     name = "dz_bioc",

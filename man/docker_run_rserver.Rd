@@ -63,7 +63,6 @@ sure your volumes have the correct permissions, these settings should be
 modified to match the user of interest.
 }
 \examples{
-
 \dontrun{
 docker_run_rserver()
 }

@@ -14,7 +14,6 @@
 #' @export
 #'
 #' @examples
-#'
 #' \dontrun{
 #' setup_Rprofile()
 #' setup_Renviron()
