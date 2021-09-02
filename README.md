@@ -11,7 +11,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 coverage](https://codecov.io/gh/dzhang32/rutils/branch/master/graph/badge.svg)](https://codecov.io/gh/dzhang32/rutils?branch=master)
 <!-- badges: end -->
 
-`rutils` is a home for commonly used utility functions.
+`rutils` is a home for the various utility functions I have found myself
+using commonly enough to package up.
 
 ## Installation instructions
 
@@ -24,36 +25,6 @@ following command:
 BiocManager::install("dzhang32/rutils")
 ```
 
-## Citation
-
-Below is the citation output from using `citation('rutils')` in R.
-Please run this yourself to check for any updates on how to cite
-**rutils**.
-
-``` r
-print(citation("rutils"), bibtex = TRUE)
-#> 
-#> To cite package 'rutils' in publications use:
-#> 
-#>   David Zhang (2020). rutils: `rutils` is a home for commonly used R
-#>   utility functions. R package version 0.99.4.
-#>   https://github.com/dzhang32/rutils
-#> 
-#> A BibTeX entry for LaTeX users is
-#> 
-#>   @Manual{,
-#>     title = {rutils: `rutils` is a home for commonly used R utility functions},
-#>     author = {David Zhang},
-#>     year = {2020},
-#>     note = {R package version 0.99.4},
-#>     url = {https://github.com/dzhang32/rutils},
-#>   }
-```
-
-Please note that the `rutils` was only made possible thanks to many
-other R and bioinformatics software authors, which are cited either in
-the vignettes and/or the paper(s) describing this package.
-
 ## Code of Conduct
 
 Please note that the `rutils` project is released with a [Contributor
@@ -63,7 +34,7 @@ By contributing to this project, you agree to abide by its terms.
 
 ## Development tools
 
-  - Continuous code testing is possible thanks to [GitHub
+-   Continuous code testing is possible thanks to [GitHub
     actions](https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/)
     through *[usethis](https://CRAN.R-project.org/package=usethis)*,
     *[remotes](https://CRAN.R-project.org/package=remotes)*,
@@ -71,16 +42,16 @@ By contributing to this project, you agree to abide by its terms.
     *[rcmdcheck](https://CRAN.R-project.org/package=rcmdcheck)*
     customized to use [Bioconductor’s docker
     containers](https://www.bioconductor.org/help/docker/) and
-    *[BiocCheck](https://bioconductor.org/packages/3.12/BiocCheck)*.
-  - Code coverage assessment is possible thanks to
+    *[BiocCheck](https://bioconductor.org/packages/3.14/BiocCheck)*.
+-   Code coverage assessment is possible thanks to
     [codecov](https://codecov.io/gh) and
     *[covr](https://CRAN.R-project.org/package=covr)*.
-  - The [documentation website](http://dzhang32.github.io/rutils) is
+-   The [documentation website](http://dzhang32.github.io/rutils) is
     automatically updated thanks to
     *[pkgdown](https://CRAN.R-project.org/package=pkgdown)*.
-  - The code is styled automatically thanks to
+-   The code is styled automatically thanks to
     *[styler](https://CRAN.R-project.org/package=styler)*.
-  - The documentation is formatted thanks to
+-   The documentation is formatted thanks to
     *[devtools](https://CRAN.R-project.org/package=devtools)* and
     *[roxygen2](https://CRAN.R-project.org/package=roxygen2)*.
 
