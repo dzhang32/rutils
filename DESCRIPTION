@@ -30,4 +30,6 @@ Imports:
     magrittr,
     stringr,
     readr,
-    dplyr
+    dplyr,
+    reactable
+
