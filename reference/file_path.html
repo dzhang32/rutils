@@ -60,9 +60,6 @@ mostly in conjunction with here::here, for checking whether a file exists
 
 
 
-<!-- dependencies from examples -->
-
-
   
 
   
@@ -96,6 +93,18 @@ mostly in conjunction with here::here, for checking whether a file exists
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/rocker_setup.html">Connecting to R Studio Server via a docker on a remote server</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -132,7 +141,7 @@ mostly in conjunction with <code>here::here</code>, for checking whether a file 
 (you've typed the path correctly).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>file_path</span><span class='op'>(</span><span class='va'>...</span>, check_exists <span class='op'>=</span> <span class='cn'>TRUE</span>, force_exists <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>file_path</span><span class='op'>(</span><span class='va'>...</span>, check_exists <span class='op'>=</span> <span class='cn'>TRUE</span>, force_exists <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -143,12 +152,12 @@ mostly in conjunction with <code>here::here</code>, for checking whether a file 
     </tr>
     <tr>
       <th>check_exists</th>
-      <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code> specifying whether to print the path and if
+      <td><p><code>logical(1)</code> specifying whether to print the path and if
 it exists locally.</p></td>
     </tr>
     <tr>
       <th>force_exists</th>
-      <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code> specifying whether to return an error if the
+      <td><p><code>logical(1)</code> specifying whether to return an error if the
 path does not exist.</p></td>
     </tr>
     </table>
@@ -158,9 +167,11 @@ path does not exist.</p></td>
     <p>file path</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='fu'>file_path</span><span class='op'>(</span><span class='st'>"/"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>/ exists</span></div><div class='output co'>#&gt; [1] "/"</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'></span>
+<span class='r-in'><span class='fu'>file_path</span><span class='op'>(</span><span class='st'>"/"</span><span class='op'>)</span></span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> / exists</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "/"</span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

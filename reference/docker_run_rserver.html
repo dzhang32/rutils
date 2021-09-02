@@ -63,9 +63,6 @@ modified to match the user of interest." />
 
 
 
-<!-- dependencies from examples -->
-
-
   
 
   
@@ -99,6 +96,18 @@ modified to match the user of interest." />
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/rocker_setup.html">Connecting to R Studio Server via a docker on a remote server</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -138,7 +147,7 @@ sure your volumes have the correct permissions, these settings should be
 modified to match the user of interest.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>docker_run_rserver</span><span class='op'>(</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>docker_run_rserver</span><span class='op'>(</span>
   image <span class='op'>=</span> <span class='st'>"bioconductor/bioconductor_docker:RELEASE_3_12"</span>,
   port <span class='op'>=</span> <span class='fl'>8888</span>,
   password <span class='op'>=</span> <span class='st'>"bioc"</span>,
@@ -150,66 +159,66 @@ modified to match the user of interest.</p>
   USERID <span class='op'>=</span> <span class='fl'>1002</span>,
   GROUPID <span class='op'>=</span> <span class='fl'>1024</span>,
   verbose <span class='op'>=</span> <span class='cn'>TRUE</span>
-<span class='op'>)</span></pre>
+<span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>image</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> name of the image to use</p></td>
+      <td><p><code>character(1)</code> name of the image to use</p></td>
     </tr>
     <tr>
       <th>port</th>
-      <td><p><code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code> port of the host which will be used to access
+      <td><p><code>integer(1)</code> port of the host which will be used to access
 RStudio server via <code>localhost::port</code>.</p></td>
     </tr>
     <tr>
       <th>password</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> password to used for RStudio server.</p></td>
+      <td><p><code>character(1)</code> password to used for RStudio server.</p></td>
     </tr>
     <tr>
       <th>name</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> name for the container.</p></td>
+      <td><p><code>character(1)</code> name for the container.</p></td>
     </tr>
     <tr>
       <th>rm</th>
-      <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code> whether to use the <code>-rm</code> flag when running the
+      <td><p><code>logical(1)</code> whether to use the <code>-rm</code> flag when running the
 container. Should the container be removed when stopped?</p></td>
     </tr>
     <tr>
       <th>volumes</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> paths for the hosts files that you want
+      <td><p><code>character(1)</code> paths for the hosts files that you want
 accessible in the container. See argument <code>permissions</code> for read/write
 access to these. Can either be a path on host or in the form
 "host_path:container_path".</p></td>
     </tr>
     <tr>
       <th>volumes_ro</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> paths for the hosts files that you want
+      <td><p><code>character(1)</code> paths for the hosts files that you want
 accessible in the container. These will be read-only on the container and
 this option is recommended for any volumes you don't need to modify.</p></td>
     </tr>
     <tr>
       <th>permissions</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> if set to "match" (be careful!), then the
+      <td><p><code>character(1)</code> if set to "match" (be careful!), then the
 permissions of the mounted volumes on the container, will match that of the
 host. I.e. the user executing the docker command will have permissions to
 read/write/execute in the container as they did on the host.</p></td>
     </tr>
     <tr>
       <th>USERID</th>
-      <td><p><code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code> the USERID of the user for which you would like
+      <td><p><code>integer(1)</code> the USERID of the user for which you would like
 the permissions of the mounted volumes to match.</p></td>
     </tr>
     <tr>
       <th>GROUPID</th>
-      <td><p><code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code> the GROUPID of the user for which you would like
+      <td><p><code>integer(1)</code> the GROUPID of the user for which you would like
 the permissions of the mounted volumes to match.</p></td>
     </tr>
     <tr>
       <th>verbose</th>
-      <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code> whether to display the command to be run (for
+      <td><p><code>logical(1)</code> whether to display the command to be run (for
 debugging purposes).</p></td>
     </tr>
     </table>
@@ -222,11 +231,10 @@ The solution for the <code>permissions</code> of the <code>volumes</code> was ta
 https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='fu'>docker_run_rserver</span><span class='op'>(</span><span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'><span class='fu'>docker_run_rserver</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -45,6 +45,18 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/rocker_setup.html">Connecting to R Studio Server via a docker on a remote server</a>
+    </li>
+  </ul>
+</li>
 <li>
   <a href="news/index.html">Changelog</a>
 </li>
@@ -70,51 +82,27 @@
   <div class="contents col-md-9">
 <div id="rutils" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#rutils" class="anchor"></a>rutils</h1></div>
+<a href="#rutils" class="anchor" aria-hidden="true"></a>rutils</h1></div>
 <!-- badges: start -->
 
-<p><code>rutils</code> is a home for commonly used utility functions.</p>
+<p><code>rutils</code> is a home for the various utility functions I have found myself using commonly enough to package up.</p>
 <div id="installation-instructions" class="section level2">
 <h2 class="hasAnchor">
-<a href="#installation-instructions" class="anchor"></a>Installation instructions</h2>
+<a href="#installation-instructions" class="anchor" aria-hidden="true"></a>Installation instructions</h2>
 <p>There’s no plan to ever submit this package to <code>CRAN</code> or <code>Bioconductor</code>. It exists purely for personal use, if you’d like to install the development version from <a href="https://github.com/" class="external-link">GitHub</a> you can use the following command:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html" class="external-link">install</a></span><span class="op">(</span><span class="st">"dzhang32/rutils"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="citation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#citation" class="anchor"></a>Citation</h2>
-<p>Below is the citation output from using <code><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation('rutils')</a></code> in R. Please run this yourself to check for any updates on how to cite <strong>rutils</strong>.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"rutils"</span><span class="op">)</span>, bibtex <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; To cite package 'rutils' in publications use:</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;   David Zhang (2020). rutils: `rutils` is a home for commonly used R</span>
-<span class="co">#&gt;   utility functions. R package version 0.99.4.</span>
-<span class="co">#&gt;   https://github.com/dzhang32/rutils</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;   @Manual{,</span>
-<span class="co">#&gt;     title = {rutils: `rutils` is a home for commonly used R utility functions},</span>
-<span class="co">#&gt;     author = {David Zhang},</span>
-<span class="co">#&gt;     year = {2020},</span>
-<span class="co">#&gt;     note = {R package version 0.99.4},</span>
-<span class="co">#&gt;     url = {https://github.com/dzhang32/rutils},</span>
-<span class="co">#&gt;   }</span></code></pre></div>
-<p>Please note that the <code>rutils</code> was only made possible thanks to many other R and bioinformatics software authors, which are cited either in the vignettes and/or the paper(s) describing this package.</p>
-</div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
+<a href="#code-of-conduct" class="anchor" aria-hidden="true"></a>Code of Conduct</h2>
 <p>Please note that the <code>rutils</code> project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 <div id="development-tools" class="section level2">
 <h2 class="hasAnchor">
-<a href="#development-tools" class="anchor"></a>Development tools</h2>
+<a href="#development-tools" class="anchor" aria-hidden="true"></a>Development tools</h2>
 <ul>
-<li>Continuous code testing is possible thanks to <a href="https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/" class="external-link">GitHub actions</a> through <em><a href="https://CRAN.R-project.org/package=usethis" class="external-link">usethis</a></em>, <em><a href="https://CRAN.R-project.org/package=remotes" class="external-link">remotes</a></em>, <em><a href="https://github.com/r-hub/sysreqs" class="external-link">sysreqs</a></em> and <em><a href="https://CRAN.R-project.org/package=rcmdcheck" class="external-link">rcmdcheck</a></em> customized to use <a href="https://www.bioconductor.org/help/docker/" class="external-link">Bioconductor’s docker containers</a> and <em><a href="https://bioconductor.org/packages/3.12/BiocCheck" class="external-link">BiocCheck</a></em>.</li>
+<li>Continuous code testing is possible thanks to <a href="https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/" class="external-link">GitHub actions</a> through <em><a href="https://CRAN.R-project.org/package=usethis" class="external-link">usethis</a></em>, <em><a href="https://CRAN.R-project.org/package=remotes" class="external-link">remotes</a></em>, <em><a href="https://github.com/r-hub/sysreqs" class="external-link">sysreqs</a></em> and <em><a href="https://CRAN.R-project.org/package=rcmdcheck" class="external-link">rcmdcheck</a></em> customized to use <a href="https://www.bioconductor.org/help/docker/" class="external-link">Bioconductor’s docker containers</a> and <em><a href="https://bioconductor.org/packages/3.14/BiocCheck" class="external-link">BiocCheck</a></em>.</li>
 <li>Code coverage assessment is possible thanks to <a href="https://codecov.io/gh" class="external-link">codecov</a> and <em><a href="https://CRAN.R-project.org/package=covr" class="external-link">covr</a></em>.</li>
 <li>The <a href="http://dzhang32.github.io/rutils" class="external-link">documentation website</a> is automatically updated thanks to <em><a href="https://CRAN.R-project.org/package=pkgdown" class="external-link">pkgdown</a></em>.</li>
 <li>The code is styled automatically thanks to <em><a href="https://CRAN.R-project.org/package=styler" class="external-link">styler</a></em>.</li>
