@@ -148,10 +148,11 @@ modified to match the user of interest.</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>docker_run_rserver</span><span class='op'>(</span>
-  image <span class='op'>=</span> <span class='st'>"bioconductor/bioconductor_docker:RELEASE_3_12"</span>,
+  image <span class='op'>=</span> <span class='st'>"bioconductor/bioconductor_docker:RELEASE_3_13"</span>,
   port <span class='op'>=</span> <span class='fl'>8888</span>,
   password <span class='op'>=</span> <span class='st'>"bioc"</span>,
   name <span class='op'>=</span> <span class='st'>"dz_bioc"</span>,
+  detach <span class='op'>=</span> <span class='cn'>TRUE</span>,
   rm <span class='op'>=</span> <span class='cn'>FALSE</span>,
   volumes <span class='op'>=</span> <span class='cn'>NULL</span>,
   volumes_ro <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -180,6 +181,12 @@ RStudio server via <code>localhost::port</code>.</p></td>
     <tr>
       <th>name</th>
       <td><p><code>character(1)</code> name for the container.</p></td>
+    </tr>
+    <tr>
+      <th>detach</th>
+      <td><p><code>logical(1)</code> whether to use the <code>-d</code> flag when running the
+container. Should the container continue to run in the background after
+<code>docker run</code> has executed?</p></td>
     </tr>
     <tr>
       <th>rm</th>
