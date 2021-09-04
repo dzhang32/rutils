@@ -12,6 +12,9 @@
 #'   RStudio server via `localhost::port`.
 #' @param password `character(1)` password to used for RStudio server.
 #' @param name `character(1)` name for the container.
+#' @param detach `logical(1)` whether to use the `-d` flag when running the
+#'   container. Should the container continue to run in the background after
+#'   `docker run` has executed?
 #' @param rm `logical(1)` whether to use the `-rm` flag when running the
 #'   container. Should the container be removed when stopped?
 #' @param volumes `character(1)` paths for the hosts files that you want
@@ -44,10 +47,11 @@
 #' \dontrun{
 #' docker_run_rserver()
 #' }
-docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE_3_12",
+docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE_3_13",
     port = 8888,
     password = "bioc",
     name = "dz_bioc",
+    detach = TRUE,
     rm = FALSE,
     volumes = NULL,
     volumes_ro = NULL,
@@ -60,6 +64,7 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE
     docker_flags <- list(
         env = paste0("PASSWORD=", password),
         publish = paste0(port, ":8787"),
+        detach = detach,
         rm = rm,
         name = name
     ) %>%

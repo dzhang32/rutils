@@ -5,10 +5,11 @@
 \title{Run an RStudio instance on the bioconductor docker image}
 \usage{
 docker_run_rserver(
-  image = "bioconductor/bioconductor_docker:RELEASE_3_12",
+  image = "bioconductor/bioconductor_docker:RELEASE_3_13",
   port = 8888,
   password = "bioc",
   name = "dz_bioc",
+  detach = TRUE,
   rm = FALSE,
   volumes = NULL,
   volumes_ro = NULL,
@@ -27,6 +28,10 @@ RStudio server via \code{localhost::port}.}
 \item{password}{\code{character(1)} password to used for RStudio server.}
 
 \item{name}{\code{character(1)} name for the container.}
+
+\item{detach}{\code{logical(1)} whether to use the \code{-d} flag when running the
+container. Should the container continue to run in the background after
+\verb{docker run} has executed?}
 
 \item{rm}{\code{logical(1)} whether to use the \code{-rm} flag when running the
 container. Should the container be removed when stopped?}
