@@ -6,7 +6,7 @@
 \alias{setup_Renviron}
 \alias{setup_gitconfig}
 \alias{setup_gitignore_global}
-\alias{setup_rstudio_pref}
+\alias{setup_rstudio_prefs}
 \title{Set of functions to setup default R and git configuration files}
 \usage{
 setup_r_git(append = FALSE)
@@ -35,7 +35,7 @@ setup_gitignore_global(
   append = FALSE
 )
 
-setup_rstudio_pref(
+setup_rstudio_prefs(
   path = "~/.config/rstudio/rstudio-prefs.json",
   template = "template_rstudio-prefs",
   append = FALSE
@@ -68,7 +68,7 @@ be modified through the \code{append} argument.
 
 \item \code{setup_gitignore_global}: Set up a default ~/.gitignore_global
 
-\item \code{setup_rstudio_pref}: Set up a default ~/.config/rstudio/rstudio-prefs.json
+\item \code{setup_rstudio_prefs}: Set up a default ~/.config/rstudio/rstudio-prefs.json
 }}
 
 \examples{
@@ -77,6 +77,6 @@ setup_Rprofile()
 setup_Renviron()
 setup_gitconfig()
 setup_gitignore_global()
-setup_rstudio_pref()
+setup_rstudio_prefs()
 }
 }

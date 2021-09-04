@@ -22,14 +22,14 @@
 #' setup_Renviron()
 #' setup_gitconfig()
 #' setup_gitignore_global()
-#' setup_rstudio_pref()
+#' setup_rstudio_prefs()
 #' }
 setup_r_git <- function(append = FALSE) {
     setup_Rprofile(append = append)
     setup_Renviron(append = append)
     setup_gitconfig(append = append)
     setup_gitignore_global(append = append)
-    setup_rstudio_pref(append = append)
+    setup_rstudio_prefs(append = append)
 }
 
 #' @describeIn setup_r_git Set up a default ~/.Rprofile
@@ -87,7 +87,7 @@ setup_gitignore_global <- function(path = "~/.gitignore_global",
 #' @describeIn setup_r_git Set up a default ~/.config/rstudio/rstudio-prefs.json
 #'
 #' @export
-setup_rstudio_pref <- function(path = "~/.config/rstudio/rstudio-prefs.json",
+setup_rstudio_prefs <- function(path = "~/.config/rstudio/rstudio-prefs.json",
     template = "template_rstudio-prefs",
     append = FALSE) {
     .setup_file(

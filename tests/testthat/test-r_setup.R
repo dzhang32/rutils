@@ -27,13 +27,25 @@ test_that("setup_Rprofile has correct output", {
 
     expect_true(test_setup_files(
         test_config_path = test_config_path,
-        setup_func = setup_Rprofile,
-        template = "template_Rprofile"
+        setup_func = setup_Renviron,
+        template = "template_Renviron"
     ))
 
     expect_true(test_setup_files(
         test_config_path = test_config_path,
-        setup_func = setup_Rprofile,
-        template = "template_Rprofile"
+        setup_func = setup_gitignore_global,
+        template = "template_gitignore_global"
+    ))
+
+    expect_true(test_setup_files(
+        test_config_path = test_config_path,
+        setup_func = setup_gitconfig,
+        template = "template_gitconfig"
+    ))
+
+    expect_true(test_setup_files(
+        test_config_path = test_config_path,
+        setup_func = setup_rstudio_prefs,
+        template = "template_rstudio-prefs"
     ))
 })
