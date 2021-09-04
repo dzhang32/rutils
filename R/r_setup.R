@@ -5,13 +5,16 @@
 #'    configurations. This settings are based on my preference and some files,
 #'   e.g. `.gitconfig` contain info that will be specific to me personally. By
 #'   default, all functions will overwrite the existing files, though this can
-#'   be modified through the `append` argument.
+#' be modified through the `append` argument.
 #'
 #' @param path `character(1)` path to the configuration file.
 #' @param template `character(1)` name of the template configuration files
 #'   stored in `inst/extdata`
 #' @param append `logical(1)` whether to append to or overwrite the `path` with
 #'   the `template`.
+#'
+#' @seealso https://docs.rstudio.com/ide/server-pro/session-user-settings.html#
+#'   lists all available rstudio preferences.
 #'
 #' @return NULL
 #' @export

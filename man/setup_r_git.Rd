@@ -80,3 +80,7 @@ setup_gitignore_global()
 setup_rstudio_prefs()
 }
 }
+\seealso{
+https://docs.rstudio.com/ide/server-pro/session-user-settings.html#
+lists all available rstudio preferences.
+}
