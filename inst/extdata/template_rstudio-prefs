@@ -1,0 +1,12 @@
+{
+    "always_save_history": false,
+    "cleanup_after_r_cmd_check": true,
+    "editor_theme": "Pastel On Dark",
+    "jobs_tab_visibility": "shown",
+    "load_workspace": false,
+    "posix_terminal_shell": "bash",
+    "show_hidden_files": true,
+    "show_margin": true, 
+    "show_memory_usage": true,
+    "save_workspace": "never"
+}                    

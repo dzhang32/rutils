@@ -1,8 +1,11 @@
 #' Set of functions to setup default R and git configuration files
 #'
-#' @description These are used to setup default Rprofile/gitconfig/gitignore_global
-#' configurations. They may be useful if you consistently need to set up new
-#' instances e.g. via `docker_run_rserver`.
+#' @description These functions are used to setup default
+#'   `.Rprofile`/`.Renviron`/`.gitconfig`/`.gitignore_global`/`.rstudio-prefs.json`
+#'    configurations. This settings are based on my preference and some files,
+#'   e.g. `.gitconfig` contain info that will be specific to me personally. By
+#'   default, all functions will overwrite the existing files, though this can
+#'   be modified through the `append` argument.
 #'
 #' @param path `character(1)` path to the configuration file.
 #' @param template `character(1)` name of the template configuration files
@@ -19,10 +22,22 @@
 #' setup_Renviron()
 #' setup_gitconfig()
 #' setup_gitignore_global()
+#' setup_rstudio_pref()
 #' }
+setup_r_git <- function(append = FALSE) {
+    setup_Rprofile(append = append)
+    setup_Renviron(append = append)
+    setup_gitconfig(append = append)
+    setup_gitignore_global(append = append)
+    setup_rstudio_pref(append = append)
+}
+
+#' @describeIn setup_r_git Set up a default ~/.Rprofile
+#'
+#' @export
 setup_Rprofile <- function(path = "~/.Rprofile",
     template = "template_Rprofile",
-    append = TRUE) {
+    append = FALSE) {
     .setup_file(
         path = path,
         template = template,
@@ -30,12 +45,12 @@ setup_Rprofile <- function(path = "~/.Rprofile",
     )
 }
 
-#' @describeIn setup_Rprofile Set up a default ~/.Renviron
+#' @describeIn setup_r_git Set up a default ~/.Renviron
 #'
 #' @export
 setup_Renviron <- function(path = "~/.Renviron",
     template = "template_Renviron",
-    append = TRUE) {
+    append = FALSE) {
     .setup_file(
         path = path,
         template = template,
@@ -43,7 +58,7 @@ setup_Renviron <- function(path = "~/.Renviron",
     )
 }
 
-#' @describeIn setup_Rprofile Set up a default ~/.gitconfig
+#' @describeIn setup_r_git Set up a default ~/.gitconfig
 #'
 #' @export
 setup_gitconfig <- function(path = "~/.gitconfig",
@@ -56,11 +71,24 @@ setup_gitconfig <- function(path = "~/.gitconfig",
     )
 }
 
-#' @describeIn setup_Rprofile Set up a default ~/.gitconfig
+#' @describeIn setup_r_git Set up a default ~/.gitignore_global
 #'
 #' @export
 setup_gitignore_global <- function(path = "~/.gitignore_global",
     template = "template_gitignore_global",
+    append = FALSE) {
+    .setup_file(
+        path = path,
+        template = template,
+        append = append
+    )
+}
+
+#' @describeIn setup_r_git Set up a default ~/.config/rstudio/rstudio-prefs.json
+#'
+#' @export
+setup_rstudio_pref <- function(path = "~/.config/rstudio/rstudio-prefs.json",
+    template = "template_rstudio-prefs",
     append = FALSE) {
     .setup_file(
         path = path,
