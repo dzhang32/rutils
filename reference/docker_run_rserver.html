@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Run an RStudio instance on the bioconductor docker image — docker_run_rserver • rutils</title>
+<title>Run an R Studio server instance on rocker-based image — docker_run_rserver • rutils</title>
 
 
 <!-- jquery -->
@@ -39,13 +39,14 @@
 
 
 
-<meta property="og:title" content="Run an RStudio instance on the bioconductor docker image — docker_run_rserver" />
-<meta property="og:description" content="A wrapper for the docker function used to run a RStudio container on a
-specified docker image. This will be available at the port specified on the
-host. Currently, the permissions argument operates through setting a USERID
-and GROUPID, which are by default set to my user's settings. In order to make
-sure your volumes have the correct permissions, these settings should be
-modified to match the user of interest." />
+<meta property="og:title" content="Run an R Studio server instance on rocker-based image — docker_run_rserver" />
+<meta property="og:description" content="A wrapper for the docker function used to run a R Studio server process on a
+specified docker image. The docker image must be based on
+rocker. This will be available at the
+port specified on the host. Currently, the permissions argument operates
+through setting a USERID and GROUPID, which are by default set to my
+user's settings. In order to make sure your volumes have the correct
+permissions, these settings should be modified to match the user of interest." />
 
 
 
@@ -133,18 +134,19 @@ modified to match the user of interest." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Run an RStudio instance on the bioconductor docker image</h1>
+    <h1>Run an R Studio server instance on rocker-based image</h1>
     <small class="dont-index">Source: <a href='https://github.com/dzhang32/rutils/blob/master/R/docker_shell.R'><code>R/docker_shell.R</code></a></small>
     <div class="hidden name"><code>docker_run_rserver.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A wrapper for the docker function used to run a RStudio container on a
-specified docker image. This will be available at the <code>port</code> specified on the
-host. Currently, the <code>permissions</code> argument operates through setting a USERID
-and GROUPID, which are by default set to my user's settings. In order to make
-sure your volumes have the correct permissions, these settings should be
-modified to match the user of interest.</p>
+    <p>A wrapper for the docker function used to run a R Studio server process on a
+specified docker image. The docker image must be based on
+<a href='https://github.com/rocker-org/rocker'>rocker</a>. This will be available at the
+<code>port</code> specified on the host. Currently, the <code>permissions</code> argument operates
+through setting a <code>USERID</code> and <code>GROUPID</code>, which are by default set to my
+user's settings. In order to make sure your volumes have the correct
+permissions, these settings should be modified to match the user of interest.</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>docker_run_rserver</span><span class='op'>(</span>
