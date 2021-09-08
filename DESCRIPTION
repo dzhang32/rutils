@@ -1,5 +1,5 @@
 Package: rutils
-Title: `rutils` is a home for commonly used R utility functions
+Title: `rutils` is a home for my commonly used R utility functions
 Version: 0.99.5
 Date: 2020-10-29
 Authors@R: 
@@ -15,7 +15,7 @@ biocViews: Software
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Suggests: 
     testthat,
     covr,
@@ -31,4 +31,3 @@ Imports:
     stringr,
     readr,
     dplyr
-

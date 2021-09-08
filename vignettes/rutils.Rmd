@@ -1,10 +1,8 @@
 ---
 title: "Introduction to rutils"
 author: 
-  - name: Your name
-    affiliation:
-    - Your institution
-    email: your.email@somewhere.com
+  - name: David Zhang
+    email: dyzhang32@gmail.com
 output: 
   BiocStyle::html_document:
     self_contained: yes

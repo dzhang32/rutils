@@ -2,7 +2,7 @@
 % Please edit documentation in R/docker_shell.R
 \name{docker_run_rserver}
 \alias{docker_run_rserver}
-\title{Run an RStudio instance on the bioconductor docker image}
+\title{Run an R Studio server instance on rocker-based image}
 \usage{
 docker_run_rserver(
   image = "bioconductor/bioconductor_docker:RELEASE_3_13",
@@ -60,12 +60,13 @@ the permissions of the mounted volumes to match.}
 debugging purposes).}
 }
 \description{
-A wrapper for the docker function used to run a RStudio container on a
-specified docker image. This will be available at the \code{port} specified on the
-host. Currently, the \code{permissions} argument operates through setting a USERID
-and GROUPID, which are by default set to my user's settings. In order to make
-sure your volumes have the correct permissions, these settings should be
-modified to match the user of interest.
+A wrapper for the docker function used to run a R Studio server process on a
+specified docker image. The docker image must be based on
+\href{https://github.com/rocker-org/rocker}{rocker}. This will be available at the
+\code{port} specified on the host. Currently, the \code{permissions} argument operates
+through setting a \code{USERID} and \code{GROUPID}, which are by default set to my
+user's settings. In order to make sure your volumes have the correct
+permissions, these settings should be modified to match the user of interest.
 }
 \examples{
 \dontrun{

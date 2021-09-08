@@ -1,11 +1,12 @@
-#' Run an RStudio instance on the bioconductor docker image
+#' Run an R Studio server instance on rocker-based image
 #'
-#' A wrapper for the docker function used to run a RStudio container on a
-#' specified docker image. This will be available at the `port` specified on the
-#' host. Currently, the `permissions` argument operates through setting a USERID
-#' and GROUPID, which are by default set to my user's settings. In order to make
-#' sure your volumes have the correct permissions, these settings should be
-#' modified to match the user of interest.
+#' A wrapper for the docker function used to run a R Studio server process on a
+#' specified docker image. The docker image must be based on
+#' [rocker](https://github.com/rocker-org/rocker). This will be available at the
+#' `port` specified on the host. Currently, the `permissions` argument operates
+#' through setting a `USERID` and `GROUPID`, which are by default set to my
+#' user's settings. In order to make sure your volumes have the correct
+#' permissions, these settings should be modified to match the user of interest.
 #'
 #' @param image `character(1)` name of the image to use
 #' @param port `integer(1)` port of the host which will be used to access
@@ -92,7 +93,7 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE
             .volumes_to_flag(read_only = FALSE)
     }
 
-    if (!is.null(volumes)) {
+    if (!is.null(volumes_ro)) {
         volumes_ro <-
             volumes_ro %>%
             .volumes_to_flag(read_only = TRUE)
