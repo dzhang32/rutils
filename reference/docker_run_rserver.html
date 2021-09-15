@@ -45,8 +45,10 @@ specified docker image. The docker image must be based on
 rocker. This will be available at the
 port specified on the host. Currently, the permissions argument operates
 through setting a USERID and GROUPID, which are by default set to my
-user's settings. In order to make sure your volumes have the correct
-permissions, these settings should be modified to match the user of interest." />
+user's settings. The USERID and GROUPID of the current user can be
+checked using the id bash command. In order to make sure your volumes have
+the correct permissions, these settings should be modified to match the user
+of interest." />
 
 
 
@@ -145,8 +147,10 @@ specified docker image. The docker image must be based on
 <a href='https://github.com/rocker-org/rocker'>rocker</a>. This will be available at the
 <code>port</code> specified on the host. Currently, the <code>permissions</code> argument operates
 through setting a <code>USERID</code> and <code>GROUPID</code>, which are by default set to my
-user's settings. In order to make sure your volumes have the correct
-permissions, these settings should be modified to match the user of interest.</p>
+user's settings. The <code>USERID</code> and <code>GROUPID</code> of the current user can be
+checked using the <code>id</code> bash command. In order to make sure your volumes have
+the correct permissions, these settings should be modified to match the user
+of interest.</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>docker_run_rserver</span><span class='op'>(</span>
