@@ -8,7 +8,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "dzhang32@gmail.com")
 Description: TO BE ADDED
-License: Artistic-2.0
+License: MIT + file LICENSE
 URL: https://github.com/dzhang32/rutils
 BugReports: https://support.bioconductor.org/t/rutils
 biocViews: Software
