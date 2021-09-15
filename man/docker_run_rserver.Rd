@@ -65,8 +65,10 @@ specified docker image. The docker image must be based on
 \href{https://github.com/rocker-org/rocker}{rocker}. This will be available at the
 \code{port} specified on the host. Currently, the \code{permissions} argument operates
 through setting a \code{USERID} and \code{GROUPID}, which are by default set to my
-user's settings. In order to make sure your volumes have the correct
-permissions, these settings should be modified to match the user of interest.
+user's settings. The \code{USERID} and \code{GROUPID} of the current user can be
+checked using the \code{id} bash command. In order to make sure your volumes have
+the correct permissions, these settings should be modified to match the user
+of interest.
 }
 \examples{
 \dontrun{

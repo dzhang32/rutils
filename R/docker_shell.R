@@ -5,8 +5,10 @@
 #' [rocker](https://github.com/rocker-org/rocker). This will be available at the
 #' `port` specified on the host. Currently, the `permissions` argument operates
 #' through setting a `USERID` and `GROUPID`, which are by default set to my
-#' user's settings. In order to make sure your volumes have the correct
-#' permissions, these settings should be modified to match the user of interest.
+#' user's settings. The `USERID` and `GROUPID` of the current user can be
+#' checked using the `id` bash command. In order to make sure your volumes have
+#' the correct permissions, these settings should be modified to match the user
+#' of interest.
 #'
 #' @param image `character(1)` name of the image to use
 #' @param port `integer(1)` port of the host which will be used to access
