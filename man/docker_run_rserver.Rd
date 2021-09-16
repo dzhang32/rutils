@@ -16,7 +16,8 @@ docker_run_rserver(
   permissions = "match",
   USERID = 1002,
   GROUPID = 1024,
-  verbose = TRUE
+  verbose = TRUE,
+  sudo = FALSE
 )
 }
 \arguments{
@@ -58,6 +59,8 @@ the permissions of the mounted volumes to match.}
 
 \item{verbose}{\code{logical(1)} whether to display the command to be run (for
 debugging purposes).}
+
+\item{sudo}{\code{logical(1)} whether to run the \code{docker} command as \code{sudo}.}
 }
 \description{
 A wrapper for the docker function used to run a R Studio server process on a

@@ -1,6 +1,6 @@
 Package: rutils
 Title: `rutils` is a home for my commonly used R utility functions
-Version: 0.99.5
+Version: 0.99.6
 Date: 2020-10-29
 Authors@R: 
     person(given = "David",
