@@ -37,7 +37,6 @@
 #'   the permissions of the mounted volumes to match.
 #' @param verbose `logical(1)` whether to display the command to be run (for
 #'   debugging purposes).
-#' @param sudo `logical(1)` whether to run the `docker` command as `sudo`.
 #'
 #' @return NULL
 #' @export
@@ -62,8 +61,7 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE
     permissions = "match",
     USERID = 1002,
     GROUPID = 1024,
-    verbose = TRUE,
-    sudo = FALSE) {
+    verbose = TRUE) {
 
     # set up the args for password and port
     docker_flags <- list(
@@ -146,9 +144,5 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE
 
 #' @noRd
 .docker_cmd <- function(sudo, ...) {
-    if (sudo) {
-        system2("sudo", "docker", ...)
-    } else {
-        system2("docker", ...)
-    }
+    system2("docker", ...)
 }
