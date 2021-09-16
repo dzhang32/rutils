@@ -147,7 +147,7 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE
 #' @noRd
 .docker_cmd <- function(sudo, ...) {
     if (sudo) {
-        system2("sudo docker", ...)
+        system2("sudo", "docker", ...)
     } else {
         system2("docker", ...)
     }
