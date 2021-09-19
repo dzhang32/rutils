@@ -1,5 +1,3 @@
-context("test file_path")
-
 test_that("file_path has correct output", {
     expect_equal(
         file_path("/", check_exists = FALSE),

@@ -37,6 +37,8 @@
 #'   the permissions of the mounted volumes to match.
 #' @param verbose `logical(1)` whether to display the command to be run (for
 #'   debugging purposes).
+#' @param return_flags `logical(1)` whether to return the flags to be inputted
+#'   into `docker run`. Used for testing and example.
 #'
 #' @return NULL
 #' @export
@@ -47,9 +49,11 @@
 #'   https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine.
 #'
 #' @examples
-#' \dontrun{
-#' docker_run_rserver()
-#' }
+#'
+#' docker_flags <- docker_run_rserver(return_flags = TRUE)
+#'
+#' # the docker command that would run on the system if return_flags = FALSE
+#' paste(c("docker", docker_flags), collapse = " ")
 docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE_3_13",
     port = 8888,
     password = "bioc",
@@ -61,7 +65,8 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE
     permissions = "match",
     USERID = 1002,
     GROUPID = 1024,
-    verbose = TRUE) {
+    verbose = TRUE,
+    return_flags = FALSE) {
 
     # set up the args for password and port
     docker_flags <- list(
@@ -103,6 +108,10 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE
 
     docker_flags <- c("run", docker_flags, permissions, volumes, volumes_ro, image)
 
+    if (return_flags) {
+        return(docker_flags)
+    }
+
     if (verbose) {
         message(
             "Running docker with flags: ",
@@ -111,6 +120,8 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE
     }
 
     .docker_cmd(sudo, docker_flags)
+
+    return(invisible())
 }
 
 #' @noRd

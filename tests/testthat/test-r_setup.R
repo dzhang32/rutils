@@ -1,5 +1,3 @@
-context("testing r_setup functions")
-
 test_config_path <- file.path(tempdir(), "test_config.txt")
 
 test_setup_files <- function(test_config_path, setup_func, template) {
