@@ -7,7 +7,8 @@ Authors@R:
            family = "Zhang",
            role = c("aut", "cre"),
            email = "dzhang32@gmail.com")
-Description: TO BE ADDED
+Description: rutils is a home for the various utility functions I have found 
+    myself using commonly enough to package up.
 License: MIT + file LICENSE
 URL: https://github.com/dzhang32/rutils
 BugReports: https://support.bioconductor.org/t/rutils
