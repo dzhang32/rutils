@@ -7,9 +7,11 @@
 save_png(plot_code, path, width = 8, height = 6, units = "in", res = 600, ...)
 }
 \arguments{
-\item{plot_code}{code required to generate the plot, sandwiched in curly braces.}
+\item{plot_code}{code required to generate the plot, sandwiched in curly
+braces.}
 
-\item{path}{\code{character(1)} specifying path for where to save your plot, including file name.}
+\item{path}{\code{character(1)} specifying path for where to save your plot,
+including file name.}
 
 \item{width}{the width of the device.}
 
@@ -29,17 +31,17 @@ save_png(plot_code, path, width = 8, height = 6, units = "in", res = 600, ...)
 Invisibly, the path to saved plot.
 }
 \description{
-A wrapper for calling \code{grDevices::png()} then \code{dev.off()}. Allows users to
-save a plot to a specified path. The preferred method for \code{ggplot2::ggplot}
-objects remains \code{ggplot::ggsave()}. However if you wish to use this function
-to save \code{ggplot2::ggplot} objects, print the plot as the last step of
-\code{plot_code}.
+A wrapper for calling \code{grDevices::png()} then \code{grDevices::dev.off()}. Allows
+users to save a plot to a specified path. The preferred method for
+\code{ggplot2::ggplot} objects remains \code{ggplot::ggsave()}. However if you wish to
+use this function to save \code{ggplot2::ggplot} objects, print the plot as the
+last step of \code{plot_code}.
 }
 \examples{
 
 {
     plot(x = 1:5)
-} \%>\%
+} |>
     save_png(
         path = file.path(tempdir(), "test_plot.png"),
     )
