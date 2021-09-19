@@ -34,13 +34,13 @@
     <loc>/reference/file_path.html</loc>
   </url>
   <url>
-    <loc>/reference/get_sum_stats.html</loc>
-  </url>
-  <url>
     <loc>/reference/index.html</loc>
   </url>
   <url>
     <loc>/reference/rutils.html</loc>
+  </url>
+  <url>
+    <loc>/reference/save_png.html</loc>
   </url>
   <url>
     <loc>/reference/setup_r_git.html</loc>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate summary statistics — get_sum_stats • rutils</title>
+<title>Save a plot as a .png — save_png • rutils</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,12 @@
 
 
 
-<meta property="og:title" content="Calculate summary statistics — get_sum_stats" />
-<meta property="og:description" content="Calculate summary statistics" />
+<meta property="og:title" content="Save a plot as a .png — save_png" />
+<meta property="og:description" content="A wrapper for calling grDevices::png() then grDevices::dev.off(). Allows
+users to save a plot to a specified path. The preferred method for
+ggplot2::ggplot objects remains ggplot::ggsave(). However if you wish to
+use this function to save ggplot2::ggplot objects, print the plot as the
+last step of plot_code." />
 
 
 
@@ -128,56 +132,71 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calculate summary statistics</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dzhang32/rutils/blob/master/R/get_sum_stats.R'><code>R/get_sum_stats.R</code></a></small>
-    <div class="hidden name"><code>get_sum_stats.Rd</code></div>
+    <h1>Save a plot as a .png</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dzhang32/rutils/blob/master/R/save_png.R'><code>R/save_png.R</code></a></small>
+    <div class="hidden name"><code>save_png.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Calculate summary statistics</p>
+    <p>A wrapper for calling <code><a href='https://rdrr.io/r/grDevices/png.html'>grDevices::png()</a></code> then <code><a href='https://rdrr.io/r/grDevices/dev.html'>grDevices::dev.off()</a></code>. Allows
+users to save a plot to a specified path. The preferred method for
+<code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot2::ggplot</a></code> objects remains <code>ggplot::ggsave()</code>. However if you wish to
+use this function to save <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot2::ggplot</a></code> objects, print the plot as the
+last step of <code>plot_code</code>.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>get_sum_stats</span><span class='op'>(</span>
-  <span class='va'>df</span>,
-  <span class='va'>sum_vars</span>,
-  group_vars <span class='op'>=</span> <span class='cn'>NULL</span>,
-  sum_funcs <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>mean <span class='op'>=</span> <span class='fu'>base</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span>, sd <span class='op'>=</span> <span class='fu'>stats</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span>, median <span class='op'>=</span> <span class='fu'>stats</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/r/stats/median.html'>median</a></span>, iqr <span class='op'>=</span>
-    <span class='fu'>stats</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/r/stats/IQR.html'>IQR</a></span><span class='op'>)</span>
-<span class='op'>)</span></code></pre></div>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>save_png</span><span class='op'>(</span><span class='va'>plot_code</span>, <span class='va'>path</span>, width <span class='op'>=</span> <span class='fl'>8</span>, height <span class='op'>=</span> <span class='fl'>6</span>, units <span class='op'>=</span> <span class='st'>"in"</span>, res <span class='op'>=</span> <span class='fl'>600</span>, <span class='va'>...</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>df</th>
-      <td><p>a <code>data.frame</code> object.</p></td>
+      <th>plot_code</th>
+      <td><p>code required to generate the plot, sandwiched in curly
+braces.</p></td>
     </tr>
     <tr>
-      <th>sum_vars</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> vector with name of columns to <code>summarize</code>.</p></td>
+      <th>path</th>
+      <td><p><code>character(1)</code> specifying path for where to save your plot,
+including file name.</p></td>
     </tr>
     <tr>
-      <th>group_vars</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> vector with name of columns to <code>group_by()</code></p></td>
+      <th>width</th>
+      <td><p>the width of the device.</p></td>
     </tr>
     <tr>
-      <th>sum_funcs</th>
-      <td><p>either function or list of functions. By default, uses
-<code><a href='https://rdrr.io/r/base/mean.html'>base::mean()</a></code>, <code><a href='https://rdrr.io/r/stats/sd.html'>stats::sd()</a></code>, <code><a href='https://rdrr.io/r/stats/median.html'>stats::median()</a></code>, <code><a href='https://rdrr.io/r/stats/IQR.html'>stats::IQR()</a></code>.</p></td>
+      <th>height</th>
+      <td><p>the height of the device.</p></td>
+    </tr>
+    <tr>
+      <th>units</th>
+      <td><p>The units in which <code>height</code> and <code>width</code> are
+    given.  Can be <code>px</code> (pixels, the default), <code>in</code> (inches),
+    <code>cm</code> or <code>mm</code>.</p></td>
+    </tr>
+    <tr>
+      <th>res</th>
+      <td><p>The nominal resolution in ppi which will be recorded in the
+    bitmap file, if a positive integer.  Also used for <code>units</code>
+    other than the default, and to convert points to pixels.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>additional arguments are passed to <code><a href='https://rdrr.io/r/grDevices/png.html'>grDevices::png()</a></code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><a href='https://tibble.tidyverse.org/reference/tbl_df-class.html'>tibble</a> object containing summarized data.</p>
+    <p>Invisibly, the path to saved plot.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'></span>
-<span class='r-in'><span class='va'>iris_summary</span> <span class='op'>&lt;-</span></span>
-<span class='r-in'>    <span class='fu'>get_sum_stats</span><span class='op'>(</span></span>
-<span class='r-in'>        <span class='va'>iris</span>,</span>
-<span class='r-in'>        sum_vars <span class='op'>=</span> <span class='st'>"Sepal.Length"</span>,</span>
-<span class='r-in'>        group_vars <span class='op'>=</span> <span class='st'>"Species"</span></span>
+<span class='r-in'><span class='op'>{</span></span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span> |&gt;</span>
+<span class='r-in'>    <span class='fu'>save_png</span><span class='op'>(</span></span>
+<span class='r-in'>        path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='st'>"test_plot.png"</span><span class='op'>)</span>,</span>
 <span class='r-in'>    <span class='op'>)</span></span>
 </code></pre></div>
   </div>
