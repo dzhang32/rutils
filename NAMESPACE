@@ -2,7 +2,7 @@
 
 export(docker_run_rserver)
 export(file_path)
-export(get_sum_stats)
+export(save_png)
 export(setup_Renviron)
 export(setup_Rprofile)
 export(setup_gitconfig)
