@@ -16,7 +16,8 @@ docker_run_rserver(
   permissions = "match",
   USERID = 1002,
   GROUPID = 1024,
-  verbose = TRUE
+  verbose = TRUE,
+  return_flags = FALSE
 )
 }
 \arguments{
@@ -58,6 +59,9 @@ the permissions of the mounted volumes to match.}
 
 \item{verbose}{\code{logical(1)} whether to display the command to be run (for
 debugging purposes).}
+
+\item{return_flags}{\code{logical(1)} whether to return the flags to be inputted
+into \verb{docker run}. Used for testing and example.}
 }
 \description{
 A wrapper for the docker function used to run a R Studio server process on a
@@ -71,9 +75,11 @@ the correct permissions, these settings should be modified to match the user
 of interest.
 }
 \examples{
-\dontrun{
-docker_run_rserver()
-}
+
+docker_flags <- docker_run_rserver(return_flags = TRUE)
+
+# the docker command that would run on the system if return_flags = FALSE
+paste(c("docker", docker_flags), collapse = " ")
 }
 \references{
 \code{docker_run_rserver} is based on
