@@ -19,32 +19,32 @@
 #' @examples
 #'
 #' {
-#'     plot(x = 1:5)
+#'   plot(x = 1:5)
 #' } |>
-#'     save_png(
-#'         path = file.path(tempdir(), "test_plot.png"),
-#'     )
+#'   save_png(
+#'     path = file.path(tempdir(), "test_plot.png"),
+#'   )
 save_png <- function(plot_code,
-    path,
-    width = 8,
-    height = 6,
-    units = "in",
-    res = 600,
-    ...) {
-    on.exit(expr = {
-        grDevices::dev.off()
-    }, add = TRUE)
+                     path,
+                     width = 8,
+                     height = 6,
+                     units = "in",
+                     res = 600,
+                     ...) {
+  on.exit(expr = {
+    grDevices::dev.off()
+  }, add = TRUE)
 
-    grDevices::png(
-        filename = path,
-        width = width,
-        height = height,
-        units = units,
-        res = res,
-        ...
-    )
+  grDevices::png(
+    filename = path,
+    width = width,
+    height = height,
+    units = units,
+    res = res,
+    ...
+  )
 
-    force(plot_code)
+  force(plot_code)
 
-    return(invisible(path))
+  return(invisible(path))
 }

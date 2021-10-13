@@ -4,10 +4,10 @@ output: github_document
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-    collapse = TRUE,
-    comment = "#>",
-    fig.path = "man/figures/README-",
-    out.width = "100%"
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
 )
 ```
 
@@ -44,5 +44,3 @@ Please note that the `rutils` project is released with a [Contributor Code of Co
 For more details, check the `dev` directory.
 
 This package was developed using `r BiocStyle::Githubpkg('lcolladotor/biocthis')`.
-
-

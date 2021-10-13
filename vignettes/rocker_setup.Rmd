@@ -86,10 +86,10 @@ Next, run the `rutils::docker_run_rserver()` function within the `R` terminal. A
 ```{r docker-run-rserver-ex1, eval = FALSE}
 
 rutils::docker_run_rserver(
-    image = "bioconductor/bioconductor_docker:RELEASE_3_13", # rocker image
-    port = 8787, # port on which the host will have present R Studio server
-    name = "example", # name of docker process
-    verbose = TRUE # whether to print out the flags passed to the docker command
+  image = "bioconductor/bioconductor_docker:RELEASE_3_13", # rocker image
+  port = 8787, # port on which the host will have present R Studio server
+  name = "example", # name of docker process
+  verbose = TRUE # whether to print out the flags passed to the docker command
 )
 ```
 
@@ -133,19 +133,19 @@ Below is an example of running `rutils::docker_run_rserver()` whilst mounting vo
 # matching user specified by the USERID and GROUPID arguments
 # volumes_ro - paths will be mounted with read-only access
 rutils::docker_run_rserver(
-    image = "bioconductor/bioconductor_docker:RELEASE_3_13",
-    port = 8787,
-    name = "example_2",
-    verbose = TRUE,
-    volumes = c(
-        "/path/to/mounted/dir"
-    ),
-    volumes_ro = c(
-        "/path/to/mounted/dir"
-    ),
-    permissions = "match",
-    USERID = 1000,
-    GROUPID = 1000
+  image = "bioconductor/bioconductor_docker:RELEASE_3_13",
+  port = 8787,
+  name = "example_2",
+  verbose = TRUE,
+  volumes = c(
+    "/path/to/mounted/dir"
+  ),
+  volumes_ro = c(
+    "/path/to/mounted/dir"
+  ),
+  permissions = "match",
+  USERID = 1000,
+  GROUPID = 1000
 )
 ```
 
@@ -162,4 +162,3 @@ options(width = 120)
 
 session_info()
 ```
-

@@ -18,23 +18,23 @@
 #'
 #' file_path("/")
 file_path <- function(..., check_exists = TRUE, force_exists = FALSE) {
-    path <- file.path(...)
+  path <- file.path(...)
 
-    if (check_exists) {
-        message(paste0(
-            path,
-            ifelse(file.exists(path), " exists", " does not exist")
-        ))
+  if (check_exists) {
+    message(paste0(
+      path,
+      ifelse(file.exists(path), " exists", " does not exist")
+    ))
+  }
+
+  if (force_exists) {
+    if (!file.exists(path)) {
+      stop(paste0(
+        path,
+        " does not exist"
+      ))
     }
+  }
 
-    if (force_exists) {
-        if (!file.exists(path)) {
-            stop(paste0(
-                path,
-                " does not exist"
-            ))
-        }
-    }
-
-    return(path)
+  return(path)
 }

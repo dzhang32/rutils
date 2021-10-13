@@ -55,105 +55,105 @@
 #' # the docker command that would run on the system if return_flags = FALSE
 #' paste(c("docker", docker_flags), collapse = " ")
 docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE_3_13",
-    port = 8888,
-    password = "bioc",
-    name = "dz_bioc",
-    detach = TRUE,
-    rm = FALSE,
-    volumes = NULL,
-    volumes_ro = NULL,
-    permissions = "match",
-    USERID = 1002,
-    GROUPID = 1024,
-    verbose = TRUE,
-    return_flags = FALSE) {
+                               port = 8888,
+                               password = "bioc",
+                               name = "dz_bioc",
+                               detach = TRUE,
+                               rm = FALSE,
+                               volumes = NULL,
+                               volumes_ro = NULL,
+                               permissions = "match",
+                               USERID = 1002,
+                               GROUPID = 1024,
+                               verbose = TRUE,
+                               return_flags = FALSE) {
 
-    # set up the args for password and port
-    docker_flags <- list(
-        env = paste0("PASSWORD=", password),
-        publish = paste0(port, ":8787"),
-        detach = detach,
-        rm = rm,
-        name = name
-    ) %>%
-        cmdfun::cmd_list_interp() %>%
-        cmdfun::cmd_list_to_flags(prefix = "--")
+  # set up the args for password and port
+  docker_flags <- list(
+    env = paste0("PASSWORD=", password),
+    publish = paste0(port, ":8787"),
+    detach = detach,
+    rm = rm,
+    name = name
+  ) %>%
+    cmdfun::cmd_list_interp() %>%
+    cmdfun::cmd_list_to_flags(prefix = "--")
 
-    # set up UID to match the host user
-    # so volume permissions also match the host
-    if (!is.null(permissions)) {
-        if (permissions == "match") {
-            permissions <- paste0(
-                "--env USERID=", USERID, " ",
-                "--env GROUPID=", GROUPID
-            )
-        } else {
-            stop("permissions must be `match` or NULL")
-        }
+  # set up UID to match the host user
+  # so volume permissions also match the host
+  if (!is.null(permissions)) {
+    if (permissions == "match") {
+      permissions <- paste0(
+        "--env USERID=", USERID, " ",
+        "--env GROUPID=", GROUPID
+      )
+    } else {
+      stop("permissions must be `match` or NULL")
     }
+  }
 
-    # set up volumes
-    # either with permission
-    if (!is.null(volumes)) {
-        volumes <-
-            volumes %>%
-            .volumes_to_flag(read_only = FALSE)
-    }
+  # set up volumes
+  # either with permission
+  if (!is.null(volumes)) {
+    volumes <-
+      volumes %>%
+      .volumes_to_flag(read_only = FALSE)
+  }
 
-    if (!is.null(volumes_ro)) {
-        volumes_ro <-
-            volumes_ro %>%
-            .volumes_to_flag(read_only = TRUE)
-    }
+  if (!is.null(volumes_ro)) {
+    volumes_ro <-
+      volumes_ro %>%
+      .volumes_to_flag(read_only = TRUE)
+  }
 
-    docker_flags <- c("run", docker_flags, permissions, volumes, volumes_ro, image)
+  docker_flags <- c("run", docker_flags, permissions, volumes, volumes_ro, image)
 
-    if (return_flags) {
-        return(docker_flags)
-    }
+  if (return_flags) {
+    return(docker_flags)
+  }
 
-    if (verbose) {
-        message(
-            "Running docker with flags: ",
-            stringr::str_c(docker_flags, collapse = " ")
-        )
-    }
+  if (verbose) {
+    message(
+      "Running docker with flags: ",
+      stringr::str_c(docker_flags, collapse = " ")
+    )
+  }
 
-    .docker_cmd(sudo, docker_flags)
+  .docker_cmd(sudo, docker_flags)
 
-    return(invisible())
+  return(invisible())
 }
 
 #' @noRd
 .volumes_to_flag <- function(volumes, read_only = FALSE) {
-    . <- NULL
+  . <- NULL
 
-    # if you've already got a ":" in the volume
-    # then leave it as is, otherwise mount volume as
-    # identical path to host
-    volumes_flag <- ifelse(stringr::str_detect(volumes, ":"),
-        volumes,
-        stringr::str_c(volumes, ":", volumes)
-    )
+  # if you've already got a ":" in the volume
+  # then leave it as is, otherwise mount volume as
+  # identical path to host
+  volumes_flag <- ifelse(stringr::str_detect(volumes, ":"),
+    volumes,
+    stringr::str_c(volumes, ":", volumes)
+  )
 
-    # prefix with the -v flag
-    volumes_flag <- volumes_flag %>%
-        stringr::str_c("-v ", .)
+  # prefix with the -v flag
+  volumes_flag <- volumes_flag %>%
+    stringr::str_c("-v ", .)
 
-    if (read_only) {
-        volumes_flag <-
-            volumes_flag %>%
-            stringr::str_c(., ":ro")
-    }
-
+  if (read_only) {
     volumes_flag <-
-        volumes_flag %>%
-        stringr::str_c(collapse = " ")
+      volumes_flag %>%
+      stringr::str_c(., ":ro")
+  }
 
-    return(volumes_flag)
+  volumes_flag <-
+    volumes_flag %>%
+    stringr::str_c(collapse = " ")
+
+  return(volumes_flag)
 }
 
 #' @noRd
 .docker_cmd <- function(sudo, ...) {
-    system2("docker", ...)
+  system2("docker", ...)
 }
