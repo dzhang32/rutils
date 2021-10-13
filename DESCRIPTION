@@ -21,7 +21,6 @@ Suggests:
     testthat,
     covr,
     knitr,
-    BiocStyle,
     knitcitations,
     sessioninfo,
     rmarkdown, 
