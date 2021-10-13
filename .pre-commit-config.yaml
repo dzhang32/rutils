@@ -40,6 +40,10 @@ repos:
         -    sessioninfo
         -    stringr
         -    testthat
+    -   id: lintr
+        args: [--warn_only]
+        verbose: true
+
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
     hooks: 
