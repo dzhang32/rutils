@@ -119,7 +119,7 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE
     )
   }
 
-  .docker_cmd(sudo, docker_flags)
+  .docker_cmd(docker_flags)
 
   return(invisible())
 }
@@ -154,6 +154,6 @@ docker_run_rserver <- function(image = "bioconductor/bioconductor_docker:RELEASE
 }
 
 #' @noRd
-.docker_cmd <- function(sudo, ...) {
+.docker_cmd <- function(...) {
   system2("docker", ...)
 }
