@@ -40,9 +40,9 @@ last step of \code{plot_code}.
 \examples{
 
 {
-    plot(x = 1:5)
+  plot(x = 1:5)
 } |>
-    save_png(
-        path = file.path(tempdir(), "test_plot.png"),
-    )
+  save_png(
+    path = file.path(tempdir(), "test_plot.png"),
+  )
 }
