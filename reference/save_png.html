@@ -46,7 +46,7 @@ last step of plot_code."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/dzhang32/rutils/">
+  <a href="https://github.com/dzhang32/rutils/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -61,54 +61,61 @@ last step of plot_code."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Save a plot as a .png</h1>
-    <small class="dont-index">Source: <a href="https://github.com/dzhang32/rutils/blob/master/R/save_png.R"><code>R/save_png.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/dzhang32/rutils/blob/HEAD/R/save_png.R" class="external-link"><code>R/save_png.R</code></a></small>
     <div class="hidden name"><code>save_png.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A wrapper for calling <code><a href="https://rdrr.io/r/grDevices/png.html">grDevices::png()</a></code> then <code><a href="https://rdrr.io/r/grDevices/dev.html">grDevices::dev.off()</a></code>. Allows
+    <p>A wrapper for calling <code><a href="https://rdrr.io/r/grDevices/png.html" class="external-link">grDevices::png()</a></code> then <code><a href="https://rdrr.io/r/grDevices/dev.html" class="external-link">grDevices::dev.off()</a></code>. Allows
 users to save a plot to a specified path. The preferred method for
-<code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot2::ggplot</a></code> objects remains <code>ggplot::ggsave()</code>. However if you wish to
-use this function to save <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot2::ggplot</a></code> objects, print the plot as the
+<code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot2::ggplot</a></code> objects remains <code>ggplot::ggsave()</code>. However if you wish to
+use this function to save <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot2::ggplot</a></code> objects, print the plot as the
 last step of <code>plot_code</code>.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">save_png</span><span class="op">(</span><span class="va">plot_code</span>, <span class="va">path</span>, width <span class="op">=</span> <span class="fl">8</span>, height <span class="op">=</span> <span class="fl">6</span>, units <span class="op">=</span> <span class="st">"in"</span>, res <span class="op">=</span> <span class="fl">600</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div id="ref-usage">
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">save_png</span><span class="op">(</span><span class="va">plot_code</span>, <span class="va">path</span>, width <span class="op">=</span> <span class="fl">8</span>, height <span class="op">=</span> <span class="fl">6</span>, units <span class="op">=</span> <span class="st">"in"</span>, res <span class="op">=</span> <span class="fl">600</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    </div>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>plot_code</th>
-      <td><p>code required to generate the plot, sandwiched in curly
-braces.</p></td>
-    </tr><tr><th>path</th>
-      <td><p><code>character(1)</code> specifying path for where to save your plot,
-including file name.</p></td>
-    </tr><tr><th>width</th>
-      <td><p>the width of the device.</p></td>
-    </tr><tr><th>height</th>
-      <td><p>the height of the device.</p></td>
-    </tr><tr><th>units</th>
-      <td><p>The units in which <code>height</code> and <code>width</code> are
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>plot_code</dt>
+<dd><p>code required to generate the plot, sandwiched in curly
+braces.</p></dd>
+<dt>path</dt>
+<dd><p><code>character(1)</code> specifying path for where to save your plot,
+including file name.</p></dd>
+<dt>width</dt>
+<dd><p>the width of the device.</p></dd>
+<dt>height</dt>
+<dd><p>the height of the device.</p></dd>
+<dt>units</dt>
+<dd><p>The units in which <code>height</code> and <code>width</code> are
     given.  Can be <code>px</code> (pixels, the default), <code>in</code> (inches),
-    <code>cm</code> or <code>mm</code>.</p></td>
-    </tr><tr><th>res</th>
-      <td><p>The nominal resolution in ppi which will be recorded in the
+    <code>cm</code> or <code>mm</code>.</p></dd>
+<dt>res</dt>
+<dd><p>The nominal resolution in ppi which will be recorded in the
     bitmap file, if a positive integer.  Also used for <code>units</code>
-    other than the default, and to convert points to pixels.</p></td>
-    </tr><tr><th>...</th>
-      <td><p>additional arguments are passed to <code><a href="https://rdrr.io/r/grDevices/png.html">grDevices::png()</a></code>.</p></td>
-    </tr></table><h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
+    other than the default, and to convert points to pixels.</p></dd>
+<dt>...</dt>
+<dd><p>additional arguments are passed to <code><a href="https://rdrr.io/r/grDevices/png.html" class="external-link">grDevices::png()</a></code>.</p></dd>
+</dl></div>
+    <div id="value">
+    <h2>Value</h2>
     <p>Invisibly, the path to saved plot.</p>
+    </div>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
 <span class="r-in"><span class="fu">save_png</span><span class="op">(</span></span>
 <span class="r-in">  <span class="op">{</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span></span>
+<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span></span>
 <span class="r-in">  <span class="op">}</span>,</span>
-<span class="r-in">  path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"test_plot.png"</span><span class="op">)</span>,</span>
+<span class="r-in">  path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"test_plot.png"</span><span class="op">)</span>,</span>
 <span class="r-in"><span class="op">)</span></span>
 </code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
@@ -121,7 +128,7 @@ including file name.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.9000.</p>
 </div>
 
       </footer></div>

@@ -1,8 +1,8 @@
 pandoc: 2.11.4
-pkgdown: 1.9000.9000.9000
-pkgdown_sha: 2368908b8d9d70237052ddd51dd93c3a129d6bc2
+pkgdown: 2.0.2.9000
+pkgdown_sha: ae7363faac9040a473a54fb3d770decdfb8dfec1
 articles:
   rocker_setup: rocker_setup.html
   rutils: rutils.html
-last_built: 2021-10-13T20:29Z
+last_built: 2022-01-30T19:50Z
 

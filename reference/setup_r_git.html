@@ -47,7 +47,7 @@ be modified through the append argument."><!-- mathjax --><script src="https://c
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/dzhang32/rutils/">
+  <a href="https://github.com/dzhang32/rutils/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -62,7 +62,7 @@ be modified through the append argument."><!-- mathjax --><script src="https://c
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Set of functions to setup default R and git configuration files</h1>
-    <small class="dont-index">Source: <a href="https://github.com/dzhang32/rutils/blob/master/R/r_setup.R"><code>R/r_setup.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/dzhang32/rutils/blob/HEAD/R/r_setup.R" class="external-link"><code>R/r_setup.R</code></a></small>
     <div class="hidden name"><code>setup_r_git.Rd</code></div>
     </div>
 
@@ -75,7 +75,8 @@ default, all functions will overwrite the existing files, though this can
 be modified through the <code>append</code> argument.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">setup_r_git</span><span class="op">(</span>append <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+    <div id="ref-usage">
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">setup_r_git</span><span class="op">(</span>append <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
 <span class="fu">setup_Rprofile</span><span class="op">(</span>
   path <span class="op">=</span> <span class="st">"~/.Rprofile"</span>,
@@ -106,31 +107,37 @@ be modified through the <code>append</code> argument.</p>
   template <span class="op">=</span> <span class="st">"template_rstudio-prefs"</span>,
   append <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span></code></pre></div>
+    </div>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>append</th>
-      <td><p><code>logical(1)</code> whether to append to or overwrite the <code>path</code> with
-the <code>template</code>.</p></td>
-    </tr><tr><th>path</th>
-      <td><p><code>character(1)</code> path to the configuration file.</p></td>
-    </tr><tr><th>template</th>
-      <td><p><code>character(1)</code> name of the template configuration files
-stored in <code>inst/extdata</code></p></td>
-    </tr></table><h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
-
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>append</dt>
+<dd><p><code>logical(1)</code> whether to append to or overwrite the <code>path</code> with
+the <code>template</code>.</p></dd>
+<dt>path</dt>
+<dd><p><code>character(1)</code> path to the configuration file.</p></dd>
+<dt>template</dt>
+<dd><p><code>character(1)</code> name of the template configuration files
+stored in <code>inst/extdata</code></p></dd>
+</dl></div>
+    <div id="functions">
+    <h2>Functions</h2>
     
 <ul><li><p><code>setup_Rprofile</code>: Set up a default ~/.Rprofile</p></li>
 <li><p><code>setup_Renviron</code>: Set up a default ~/.Renviron</p></li>
 <li><p><code>setup_gitconfig</code>: Set up a default ~/.gitconfig</p></li>
 <li><p><code>setup_gitignore_global</code>: Set up a default ~/.gitignore_global</p></li>
 <li><p><code>setup_rstudio_prefs</code>: Set up a default ~/.config/rstudio/rstudio-prefs.json</p></li>
-</ul><h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
+</ul></div>
+    <div id="see-also">
+    <h2>See also</h2>
     <div class="dont-index"><p>https://docs.rstudio.com/ide/server-pro/session-user-settings.html#
 lists all available rstudio preferences.</p></div>
+    </div>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in"><span class="fu">setup_Rprofile</span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu">setup_Renviron</span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu">setup_gitconfig</span><span class="op">(</span><span class="op">)</span></span>
@@ -138,6 +145,7 @@ lists all available rstudio preferences.</p></div>
 <span class="r-in"><span class="fu">setup_rstudio_prefs</span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">}</span></span>
 </code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
@@ -150,7 +158,7 @@ lists all available rstudio preferences.</p></div>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.9000.</p>
 </div>
 
       </footer></div>

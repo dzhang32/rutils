@@ -44,7 +44,7 @@ mostly in conjunction with here::here, for checking whether a file exists
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/dzhang32/rutils/">
+  <a href="https://github.com/dzhang32/rutils/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -59,7 +59,7 @@ mostly in conjunction with here::here, for checking whether a file exists
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Create a file path and/or check if it exists</h1>
-    <small class="dont-index">Source: <a href="https://github.com/dzhang32/rutils/blob/master/R/file_path.R"><code>R/file_path.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/dzhang32/rutils/blob/HEAD/R/file_path.R" class="external-link"><code>R/file_path.R</code></a></small>
     <div class="hidden name"><code>file_path.Rd</code></div>
     </div>
 
@@ -69,27 +69,34 @@ mostly in conjunction with <code>here::here</code>, for checking whether a file 
 (you've typed the path correctly).</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">file_path</span><span class="op">(</span><span class="va">...</span>, check_exists <span class="op">=</span> <span class="cn">TRUE</span>, force_exists <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    <div id="ref-usage">
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">file_path</span><span class="op">(</span><span class="va">...</span>, check_exists <span class="op">=</span> <span class="cn">TRUE</span>, force_exists <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    </div>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>...</th>
-      <td><p>passed to <code><a href="https://rdrr.io/r/base/file.path.html">base::file.path</a></code>.</p></td>
-    </tr><tr><th>check_exists</th>
-      <td><p><code>logical(1)</code> specifying whether to print the path and if
-it exists locally.</p></td>
-    </tr><tr><th>force_exists</th>
-      <td><p><code>logical(1)</code> specifying whether to return an error if the
-path does not exist.</p></td>
-    </tr></table><h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>...</dt>
+<dd><p>passed to <code><a href="https://rdrr.io/r/base/file.path.html" class="external-link">base::file.path</a></code>.</p></dd>
+<dt>check_exists</dt>
+<dd><p><code>logical(1)</code> specifying whether to print the path and if
+it exists locally.</p></dd>
+<dt>force_exists</dt>
+<dd><p><code>logical(1)</code> specifying whether to return an error if the
+path does not exist.</p></dd>
+</dl></div>
+    <div id="value">
+    <h2>Value</h2>
     <p>file path</p>
+    </div>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
 <span class="r-in"><span class="fu">file_path</span><span class="op">(</span><span class="st">"/"</span><span class="op">)</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> / exists</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/"</span>
 </code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
@@ -102,7 +109,7 @@ path does not exist.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.9000.</p>
 </div>
 
       </footer></div>
