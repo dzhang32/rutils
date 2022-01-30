@@ -25,7 +25,8 @@ Suggests:
     sessioninfo,
     rmarkdown, 
     ggplot2,
-    dplyr
+    dplyr, 
+    BiocStyle
 VignetteBuilder: knitr
 Imports: 
     cmdfun,
