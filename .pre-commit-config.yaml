@@ -28,6 +28,7 @@ repos:
     -   id: roxygenize # create .Rd files
         # roxygen requires loading pkg -> add dependencies from DESCRIPTION
         additional_dependencies:
+        -    cpp11
         -    cmdfun
         -    covr
         -    dplyr
