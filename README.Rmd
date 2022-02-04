@@ -26,7 +26,7 @@ knitr::opts_chunk$set(
 There's no plan to ever submit this package to `CRAN` or `Bioconductor`. It exists purely for personal use, if you'd like to install the development version from [GitHub](https://github.com/) you can use the following command:
 
 ```{r 'install_dev', eval = FALSE}
-BiocManager::install("dzhang32/rutils")
+BiocManager::install(" dzhang32/rutils")
 ```
 
 ## Code of Conduct
